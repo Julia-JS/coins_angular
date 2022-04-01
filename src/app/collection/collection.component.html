@@ -1,0 +1,7 @@
+<ng-container *transloco="let t;">
+  <div class="collection">
+    <mat-card class="collection__item" *ngFor="let continent of t('continents'); index as i" (click)="setContinent(continent.name, i)">{{ t('continents')[i].name }}</mat-card>
+  </div>
+<!--  <app-countries [id]="id"></app-countries>-->
+  <router-outlet></router-outlet>
+</ng-container>

@@ -1,0 +1,63 @@
+<ng-container *transloco="let t;">
+  <div class="new-coin-dialog__title">{{ t('newCoinDialog.title') }}</div>
+  <mat-divider></mat-divider>
+  <section class="new-coin-dialog__section">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ t('newCoinDialog.country') }}</mat-label>
+      <mat-select>
+
+<!--        <mat-optgroup *ngFor="let group of pokemonGroups" [label]="group.name"-->
+<!--                      [disabled]="group.disabled">-->
+<!--          <mat-option *ngFor="let pokemon of group.pokemon" [value]="pokemon.value">-->
+<!--            {{pokemon.viewValue}}-->
+<!--          </mat-option>-->
+<!--        </mat-optgroup>-->
+
+        <mat-optgroup *ngFor="let continent of t('continents'); index as i" [label]="t('continents')[i].name">
+          <mat-option value=""
+                      *ngFor="let country of continent.countries; index as i">
+            {{ country }}
+          </mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+  </section>
+  <mat-divider></mat-divider>
+  <section class="new-coin-dialog__section">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ t('newCoinDialog.denomination') }}</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ t('newCoinDialog.currency') }}</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </section>
+  <mat-divider></mat-divider>
+  <section class="new-coin-dialog__section">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ t('newCoinDialog.year') }}</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ t('newCoinDialog.material') }}</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </section>
+  <mat-divider></mat-divider>
+  <section class="new-coin-dialog__section">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ t('newCoinDialog.comment') }}</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </section>
+  <mat-divider></mat-divider>
+  <section class="new-coin-dialog__section">
+    <button mat-raised-button color="primary">{{ t('newCoinDialog.addPhoto') }}</button>
+  </section>
+  <mat-divider></mat-divider>
+  <section mat-dialog-actions class="new-coin-dialog__section">
+    <button mat-button (click)="close()">{{ t('newCoinDialog.buttons.cancel') }}</button>
+    <button mat-button cdkFocusInitial (click)="save()">{{ t('newCoinDialog.buttons.save') }}</button>
+  </section>
+</ng-container>

@@ -1,0 +1,31 @@
+<ng-container *transloco="let t; read 'header'">
+  <header class="header">
+    <div class="header__logo--wrapper">
+      <div class="header__logo">
+        <div class="header__logo--side header__logo--front">₽</div>
+        <div class="header__logo--side header__logo--back">1</div>
+        <div class="header__logo--edge"></div>
+      </div>
+    </div>
+    <div class="header__title" routerLink="/">{{ t('title') }}</div>
+    <div class="header__right">
+      <button mat-mini-fab color="primary" (click)="openDialog()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ t('languages.choose') }}</mat-label>
+          <mat-select (selectionChange)="change($event)">
+            <mat-option value="ru">{{ t('languages.russian') }}</mat-option>
+            <mat-option value="en">{{ t('languages.english') }}</mat-option>
+            <mat-option value="es">{{ t('languages.spanish') }}</mat-option>
+            <mat-option value="de">{{ t('languages.german') }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="header__hamburger" (click)="toggle()">
+        <div class="header__hamburger--inner" [class.opened]="dataShare.getSidenavStatus() | async"></div>
+      </div>
+    </div>
+  </header>
+</ng-container>

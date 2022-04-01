@@ -1,0 +1,37 @@
+{
+  "header": {
+    "title": "Coins",
+    "languages": {
+      "choose": "Choose language",
+      "russian": "Russian",
+      "english": "English",
+      "spanish": "Spanish",
+      "german": "German"
+    }
+  },
+  "sidenav": [
+    {
+      "name": "Collection",
+      "link": "collection"
+    },
+    {
+      "name": "Analytics",
+      "link": "analytics"
+    }
+  ],
+  "newCoinDialog": {
+    "title": "Add new coin",
+    "country": "Country",
+    "denomination": "Denomination",
+    "currency": "Currency",
+    "year": "Year",
+    "material": "Material",
+    "comment": "Comment",
+    "addPhoto": "Add photo",
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save"
+    }
+  },
+  "continents": ["Australia", "Africa", "Asia", "Europe", "North America", "South America"]
+}

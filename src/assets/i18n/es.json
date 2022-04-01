@@ -1,0 +1,37 @@
+{
+  "header": {
+    "title": "Monedas",
+    "languages": {
+      "choose": "Seleccione idioma",
+      "russian": "Ruso",
+      "english": "Inglés",
+      "spanish": "Español",
+      "german": "Alemán"
+    }
+  },
+  "sidenav": [
+    {
+      "name": "Colección",
+      "link": "collection"
+    },
+    {
+      "name": "Analítica",
+      "link": "analytics"
+    }
+  ],
+  "newCoinDialog": {
+    "title": "Add new coin es",
+    "country": "Country es",
+    "denomination": "Denomination es",
+    "currency": "Currency es",
+    "year": "Year es",
+    "material": "Material es",
+    "comment": "Comment es",
+    "addPhoto": "Add photo es",
+    "buttons": {
+      "cancel": "Cancel es",
+      "save": "Save es"
+    }
+  },
+  "continents": ["Australia", "África", "Asia", "Europa", "Norteamérica", "Sudamerica"]
+}
