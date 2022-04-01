@@ -33,5 +33,96 @@
       "save": "Save es"
     }
   },
-  "continents": ["Australia", "África", "Asia", "Europa", "Norteamérica", "Sudamerica"]
+  "continents": [
+    {
+      "name": "Australia",
+      "countries": ["Australia1", "Australia2", "Australia3"]
+    },
+    {
+      "name": "África",
+      "countries": ["África1", "África2", "África3"]
+    },
+    {
+      "name": "Asia",
+      "countries": ["Asia1", "Asia2", "Asia3"]
+    },
+    {
+      "name": "Europa",
+      "countries": [
+        "Abjasia",
+        "Austria",
+        "Azerbaiyán",
+        "Aland",
+        "Albania",
+        "Andorra",
+        "Armenia",
+        "Bielorrusia",
+        "Bélgica",
+        "Bulgaria",
+        "Bosnia y Herzegovina",
+        "Vaticano",
+        "Gran Bretaña",
+        "Hungría",
+        "Alemania",
+        "Guernesey"
+        "Gibraltar",
+        "Grecia",
+        "Georgia",
+        "Dinamarca",
+        "Jersey",
+        "DNR",
+        "Irlanda",
+        "Islandia",
+        "España",
+        "Italia",
+        "Kazajstán",
+        "Chipre",
+        "Kosovo",
+        "Letonia",
+        "Lituania",
+        "Liechtenstein",
+        "LNR",
+        "Luxemburgo",
+        "Malta",
+        "Moldavia",
+        "Mónaco",
+        "República de Nagorno-Karabaj",
+        "Países Bajos",
+        "Noruega",
+        "Isla del hombre",
+        "Polonia",
+        "Portugal",
+        "Transnistria",
+        "Rusia",
+        "Rumania",
+        "San Marino"
+        "Macedonia del Norte",
+        "Serbia",
+        "Eslovaquia",
+        "Eslovenia",
+        "República Turca del Norte de Chipre",
+        "Pavo",
+        "Ucrania",
+        "Feroe",
+        "Finlandia",
+        "Francia",
+        "Croacia",
+        "Montenegro",
+        "Checo",
+        "Suiza",
+        "Suecia",
+        "Svalbard",
+        "Estonia",
+        "Osetia del Sur"
+      ]
+    },
+    {
+      "name": "Norteamérica",
+      "countries": ["Norteamérica1", "Norteamérica2", "Norteamérica3"]
+    },
+    {
+      "name": "Sudamerica",
+      "countries": ["Sudamerica1", "Sudamerica2", "Sudamerica3"]
+    }
+  ]
 }

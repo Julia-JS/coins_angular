@@ -20,14 +20,14 @@ export class SidenavComponent implements OnInit, OnDestroy {
   public isOpened = false;
 
   ngOnInit(): void {
-    this.dataShare.getSidenavStatus()
+    this.dataShare.isSidenavOpened
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(isOpened => this.isOpened = isOpened);
   }
 
-  clickItem(link): void {
+  clickItem(link, status): void {
     this.router.navigate([link]);
-    this.dataShare.toggleSidenavStatus();
+    this.dataShare.toggleSidenavStatus(status);
   }
 
   ngOnDestroy(): void {
@@ -38,7 +38,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
   @HostListener('document:click', ['$event'])
   onClick(event: Event): void {
     if (this.overlay.nativeElement.contains(event.target)) {
-      this.dataShare.toggleSidenavStatus();
+      this.dataShare.toggleSidenavStatus(!this.isOpened);
       console.log(this.overlay);
     }
   }

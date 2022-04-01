@@ -5,17 +5,15 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class DataShareService {
-  private opened = false;
-  private isOpened = new BehaviorSubject(this.opened);
+  private _isSidenavOpened: BehaviorSubject<boolean>;
+  public isSidenavOpened: Observable<boolean>;
 
-  constructor() { }
-
-  public getSidenavStatus(): Observable<boolean> {
-    return this.isOpened.asObservable();
+  constructor() {
+    this._isSidenavOpened = new BehaviorSubject(false);
+    this.isSidenavOpened = this._isSidenavOpened.asObservable();
   }
 
-  public toggleSidenavStatus(): void {
-    this.opened = !this.opened;
-    this.isOpened.next(this.opened);
+  public toggleSidenavStatus(value: boolean): void {
+    this._isSidenavOpened.next(value);
   }
 }

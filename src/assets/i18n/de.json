@@ -33,5 +33,96 @@
       "save": "Save de"
     }
   },
-  "continents": ["Australien", "Afrika", "Asien", "Europa", "Nordamerika", "Südamerika"]
+  "continents": [
+    {
+      "name": "Australien",
+      "countries": ["Australien1", "Australien2", "Australien3"]
+    },
+    {
+      "name": "Afrika",
+      "countries": ["Afrika1", "Afrika2", "Afrika3"]
+    },
+    {
+      "name": "Asien",
+      "countries": ["Asien1", "Asien2", "Asien3"]
+    },
+    {
+      "name": "Europa",
+      "countries": [
+        "Abchasien",
+        "Österreich",
+        "Aserbaidschan",
+        "Alands",
+        "Albanien",
+        "Andorra",
+        "Armenien",
+        "Weißrussland",
+        "Belgien",
+        "Bulgarien",
+        "Bosnien und Herzegowina",
+        "Vatikan",
+        "Großbritannien",
+        "Ungarn",
+        "Deutschland",
+        "Guernsey"
+        "Gibraltar",
+        "Griechenland",
+        "Georgia",
+        "Dänemark",
+        "Jersey",
+        "DNR",
+        "Irland",
+        "Island",
+        "Spanien",
+        "Italien",
+        "Kasachstan",
+        "Zypern",
+        "Kosovo",
+        "Lettland",
+        "Litauen",
+        "Liechtenstein",
+        "LNR",
+        "Luxemburg",
+        "Malta",
+        "Moldawien",
+        "Monaco",
+        "Republik Berg-Karabach",
+        "Niederlande",
+        "Norwegen",
+        "Isle of Man",
+        "Polen",
+        "Portugal",
+        "Transnistrien",
+        "Russland",
+        "Rumänien",
+        "San Marino"
+        "Nordmazedonien",
+        "Serbien",
+        "Slowakei",
+        "Slowenien",
+        "Türkische Republik Nordzypern",
+        "Truthahn",
+        "Ukraine",
+        "Färöer",
+        "Finnland",
+        "Frankreich",
+        "Kroatien",
+        "Montenegro",
+        "Tschechien",
+        "Schweiz",
+        "Schweden",
+        "Spitzbergen",
+        "Estland",
+        "Südossetien"
+      ]
+    },
+    {
+      "name": "Nordamerika",
+      "countries": ["Nordamerika1", "Nordamerika2", "Nordamerika3"]
+    },
+    {
+      "name": "Südamerika",
+      "countries": ["Südamerika1", "Südamerika2", "Südamerika3"]
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 <ng-container *transloco="let t;">
-  <div class="sidenav__wrapper" [class.sidenav__wrapper--opened]="dataShare.getSidenavStatus() | async">
-    <div class="sidenav__overlay" #overlay [class.sidenav__overlay--opened]="dataShare.getSidenavStatus() | async"></div>
-    <div class="sidenav" [class.sidenav--opened]="dataShare.getSidenavStatus() | async">
-      <div class="sidenav__item" *ngFor="let sidenav of t('sidenav'); index as i" (click)="clickItem(sidenav.link)">{{ t('sidenav')[i].name }}</div>
+  <div class="sidenav__wrapper" [class.sidenav__wrapper--opened]="isOpened">
+    <div class="sidenav__overlay" #overlay [class.sidenav__overlay--opened]="isOpened"></div>
+    <div class="sidenav" [class.sidenav--opened]="isOpened">
+      <div class="sidenav__item" *ngFor="let sidenav of t('sidenav'); index as i" (click)="clickItem(sidenav.link, !isOpened)">{{ t('sidenav')[i].name }}</div>
     </div>
   </div>
 </ng-container>

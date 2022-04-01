@@ -33,5 +33,96 @@
       "save": "Save"
     }
   },
-  "continents": ["Australia", "Africa", "Asia", "Europe", "North America", "South America"]
+  "continents": [
+    {
+      "name": "Australia",
+      "countries": ["Australia1", "Australia2", "Australia3"]
+    },
+    {
+      "name": "Africa",
+      "countries": ["Africa1", "Africa2", "Africa3"]
+    },
+    {
+      "name": "Asia",
+      "countries": ["Asia1", "Asia2", "Asia3"]
+    },
+    {
+      "name": "Europe",
+      "countries": [
+        "Abkhazia",
+        "Austria",
+        "Azerbaijan",
+        "Aland",
+        "Albania",
+        "Andorra",
+        "Armenia",
+        "Belarus",
+        "Belgium",
+        "Bulgaria",
+        "Bosnia and Herzegovina",
+        "Vatican",
+        "Great Britain",
+        "Hungary",
+        "Germany",
+        "Guernsey",
+        "Gibraltar",
+        "Greece",
+        "Georgia",
+        "Denmark",
+        "Jersey",
+        "DPR",
+        "Ireland",
+        "Iceland",
+        "Spain",
+        "Italy",
+        "Kazakhstan",
+        "Cyprus",
+        "Kosovo",
+        "Latvia",
+        "Lithuania",
+        "Liechtenstein",
+        "LPR",
+        "Luxembourg",
+        "Malta",
+        "Moldova",
+        "Monaco",
+        "Nagorno-Karabakh Republic",
+        "Netherlands",
+        "Norway",
+        "Isle Of Man",
+        "Poland",
+        "Portugal",
+        "Transnistria",
+        "Russia",
+        "Romania",
+        "San Marino"
+        "North Macedonia",
+        "Serbia",
+        "Slovakia",
+        "Slovenia",
+        "Turkish Republic of Northern Cyprus",
+        "Turkey",
+        "Ukraine",
+        "Faroe",
+        "Finland",
+        "France",
+        "Croatia",
+        "Montenegro",
+        "Czech",
+        "Switzerland",
+        "Sweden",
+        "Svalbard",
+        "Estonia",
+        "South Ossetia"
+      ]
+    },
+    {
+      "name": "North America",
+      "countries": ["North America1", "North America2", "North America3"]
+    },
+    {
+      "name": "South America",
+      "countries": ["South America1", "South America2", "South America3"]
+    }
+  ]
 }

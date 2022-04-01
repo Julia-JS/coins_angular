@@ -23,8 +23,8 @@
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="header__hamburger" (click)="toggle()">
-        <div class="header__hamburger--inner" [class.opened]="dataShare.getSidenavStatus() | async"></div>
+      <div class="header__hamburger" (click)="toggle(!isOpened)">
+        <div class="header__hamburger--inner" [class.opened]="isOpened"></div>
       </div>
     </div>
   </header>

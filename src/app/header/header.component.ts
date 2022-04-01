@@ -3,7 +3,7 @@ import {TranslocoService} from '@ngneat/transloco';
 import {MatDialog} from '@angular/material/dialog';
 import {NewCoinDialogComponent} from '../new-coin-dialog/new-coin-dialog.component';
 import {DataShareService} from '../services/data-share.service';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
@@ -18,10 +18,10 @@ export class HeaderComponent implements OnInit, AfterContentChecked, OnDestroy {
 
   private ngUnsubscribe = new Subject<void>();
 
-  public isOpened;
+  public isOpened: boolean;
 
   ngOnInit(): void {
-    this.isOpened = this.dataShare.getSidenavStatus()
+    this.dataShare.isSidenavOpened
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(isOpened => this.isOpened = isOpened);
   }
@@ -34,9 +34,8 @@ export class HeaderComponent implements OnInit, AfterContentChecked, OnDestroy {
     this.service.setActiveLang(lang.value);
   }
 
-  toggle(): void {
-    this.dataShare.toggleSidenavStatus();
-    this.isOpened = this.dataShare.getSidenavStatus();
+  toggle(value: boolean): void {
+    this.dataShare.toggleSidenavStatus(value);
   }
 
   openDialog(): void {
