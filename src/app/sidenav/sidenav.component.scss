@@ -9,7 +9,6 @@
   background: #ffd700;
   transition-duration: 0.5s;
   box-sizing: border-box;
-  z-index: 1;
 
   &__wrapper {
     position: absolute;
@@ -17,24 +16,22 @@
     top: 0;
     width: 100vw;
     height: 100vh;
+    transition-duration: 0.5s;
     z-index: -1;
 
     &--opened {
+      transition-duration: 0.5s;
       z-index: 1;
     }
   }
 
   &__overlay {
-    display: none;
-    opacity: 0;
     height: 100vh;
     width: 100%;
     background: transparent;
-    z-index: 3;
+    transition-duration: 0.5s;
 
     &--opened {
-      display: block;
-      opacity: 1;
       background: rgba(0, 0, 0, 0.5);
       transition-duration: 0.5s;
     }
