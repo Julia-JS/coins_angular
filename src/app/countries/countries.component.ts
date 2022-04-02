@@ -10,9 +10,10 @@ import {Subscription} from 'rxjs';
 export class CountriesComponent implements AfterContentChecked {
   public continent = '';
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngAfterContentChecked(): void {
-    this.continent = this.activatedRoute.snapshot.queryParamMap.get('continent');
+    this.continent = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log(this.continent);
   }
 }

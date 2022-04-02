@@ -12,7 +12,7 @@ export class CollectionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setContinent(continent, i): void {
-    this.router.navigate(['collection', i], { queryParams: {continent}} );
+  setContinent(i): void {
+    this.router.navigate(['collection', i]);
   }
 }
