@@ -39,7 +39,6 @@ export class SidenavComponent implements OnInit, OnDestroy {
   onClick(event: Event): void {
     if (this.overlay.nativeElement.contains(event.target)) {
       this.dataShare.toggleSidenavStatus(!this.isOpened);
-      console.log(this.overlay);
     }
   }
 }

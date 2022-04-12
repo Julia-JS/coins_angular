@@ -1,5 +1,5 @@
 <ng-container *transloco="let t;">
-  <div class="collection">
+  <div class="collection" [class.collection--opened]="isOpened">
     <div class="collection__item" *ngFor="let continent of t('continents'); index as i" (click)="setContinent(i)">{{ t('continents')[i].name }}</div>
   </div>
   <router-outlet></router-outlet>

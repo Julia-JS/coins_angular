@@ -4,6 +4,73 @@
   &__title {
     font-size: 1.75rem;
     font-weight: 700;
+    line-height: 2rem;
     text-align: center;
+  }
+
+  &__container {
+    margin-top: 3rem;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 10fr 10fr 10fr 10fr 10fr 10fr 10fr 10fr;
+    line-height: 2rem;
+  }
+
+  &__header {
+    border: 3px solid black;
+    font-weight: 700;
+    background: white;
+
+    .countries__column {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid black;
+    font-size: 1rem;
+
+    &--photo {
+      display: flex;
+      justify-content: center;
+    }
+
+    &--edit {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:first-child {
+      justify-content: flex-start;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    img {
+      width: 5rem;
+      cursor: pointer;
+
+      + img {
+        margin-left: 1rem;
+      }
+    }
+
+    button {
+      width: fit-content;
+
+      + button {
+        margin-top: 0.5rem;
+      }
+    }
+
+
   }
 }

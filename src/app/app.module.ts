@@ -15,22 +15,25 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
-import {NewCoinDialogComponent} from './new-coin-dialog/new-coin-dialog.component';
+import {CoinDialogComponent} from './coin-dialog/coin-dialog.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {CollectionComponent} from './collection/collection.component';
 import {AnalyticsComponent} from './analytics/analytics.component';
 import {CountriesComponent} from './countries/countries.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {CoinImageDialogComponent} from './coin-image-dialog/coin-image-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidenavComponent,
-    NewCoinDialogComponent,
+    CoinDialogComponent,
     CollectionComponent,
     AnalyticsComponent,
-    CountriesComponent
+    CountriesComponent,
+    CoinImageDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +47,12 @@ import {CountriesComponent} from './countries/countries.component';
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
+    MatIconModule,
     MatInputModule,
     MatDividerModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

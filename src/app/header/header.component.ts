@@ -1,9 +1,9 @@
-import {Component, AfterContentChecked, ChangeDetectorRef, OnInit, OnChanges, OnDestroy} from '@angular/core';
+import {Component, AfterContentChecked, ChangeDetectorRef, OnInit, OnDestroy} from '@angular/core';
 import {TranslocoService} from '@ngneat/transloco';
 import {MatDialog} from '@angular/material/dialog';
-import {NewCoinDialogComponent} from '../new-coin-dialog/new-coin-dialog.component';
+import {CoinDialogComponent} from '../coin-dialog/coin-dialog.component';
 import {DataShareService} from '../services/data-share.service';
-import {Observable, Subject} from 'rxjs';
+import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
@@ -28,6 +28,15 @@ export class HeaderComponent implements OnInit, AfterContentChecked, OnDestroy {
 
   ngAfterContentChecked(): void {
     this.changeDetector.detectChanges();
+
+    if(this.isOpened) {
+      document.body.style.position = 'fixed';
+      document.body.style.top = '0';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+    } else {
+      document.body.style.position = 'static';
+    }
   }
 
   change(lang): void {
@@ -39,7 +48,7 @@ export class HeaderComponent implements OnInit, AfterContentChecked, OnDestroy {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(NewCoinDialogComponent, {
+    this.dialog.open(CoinDialogComponent, {
       width: '30rem',
     });
   }

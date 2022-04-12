@@ -1,5 +1,5 @@
 .sidenav {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   padding: 5rem 2rem;
@@ -11,7 +11,7 @@
   box-sizing: border-box;
 
   &__wrapper {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     width: 100vw;

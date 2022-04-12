@@ -1,9 +1,16 @@
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   height: 5rem;
   background: darkgray;
+
+  &--opened {
+    position: absolute;
+  }
 
   &__logo {
     --diameter: 3rem;

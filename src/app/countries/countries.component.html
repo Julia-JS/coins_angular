@@ -1,5 +1,45 @@
 <ng-container *transloco="let t;">
   <div class="countries">
     <div class="countries__title">{{ t('continents')[continent].name }}</div>
+    <div class="countries__container">
+      <div class="countries__row countries__header">
+        <div class="countries__column">{{ t('collection.country') }}</div>
+        <div class="countries__column">{{ t('collection.denomination') }}</div>
+        <div class="countries__column">{{ t('collection.currency') }}</div>
+        <div class="countries__column">{{ t('collection.year') }}</div>
+        <div class="countries__column">{{ t('collection.material') }}</div>
+        <div class="countries__column">{{ t('collection.comment') }}</div>
+        <div class="countries__column">{{ t('collection.photo') }}</div>
+        <div class="countries__column"></div>
+      </div>
+      <div class="countries__row" *ngFor="let coin of this.coins">
+        <div class="countries__column">
+          {{ coin.country }}
+        </div>
+        <div class="countries__column">
+          {{ coin.denomination }}
+        </div>
+        <div class="countries__column">
+          {{ coin.currency }}
+        </div>
+        <div class="countries__column">
+          {{ coin.year }}
+        </div>
+        <div class="countries__column">
+          {{ coin.material }}
+        </div>
+        <div class="countries__column">
+          {{ coin.comment }}
+        </div>
+        <div class="countries__column countries__column--photo">
+          <img *ngFor="let image of coin.image" [src]="image" (click)="openCoin(coin.image)" alt="coin">
+        </div>
+        <div class="countries__column countries__column--edit">
+          <button mat-raised-button color="primary" (click)="openDialog(coin)">{{ t('collection.edit') }}</button>
+          <button mat-raised-button color="warn" (click)="delete(coin.id)">{{ t('collection.delete') }}</button>
+        </div>
+      </div>
+    </div>
   </div>
 </ng-container>
+
