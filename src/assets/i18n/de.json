@@ -17,6 +17,10 @@
     {
       "name": "Analytik",
       "link": "analytics"
+    },
+    {
+      "name": "Управление",
+      "link": "administration"
     }
   ],
   "coinDialog": {

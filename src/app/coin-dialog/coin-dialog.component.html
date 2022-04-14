@@ -46,9 +46,9 @@
     </section>
     <mat-divider></mat-divider>
     <section class="coin-dialog__section coin-dialog__section--image">
-      <input #input type="file" class="coin-dialog__input--file" (change)="onFileUpload($event)"
+      <input #inputFile type="file" class="coin-dialog__input--file" (change)="onFileUpload($event)"
              formControlName="image">
-      <button mat-raised-button color="primary" (click)="triggerClick()"
+      <button mat-raised-button color="primary" (click)="triggerInputFileClick()"
               [disabled]="imagesArray.length >= 2">{{ t('coinDialog.addPhoto') }}</button>
       <div *ngFor="let image of imagesArray; index as index" class="coin-dialog__img">
         <img [src]="image" alt="coin">
@@ -57,8 +57,8 @@
     </section>
     <mat-divider></mat-divider>
     <section mat-dialog-actions class="coin-dialog__section">
-      <button mat-button (click)="close()">{{ t('coinDialog.buttons.cancel') }}</button>
-      <button mat-button cdkFocusInitial (click)="submit()">{{ isNewCoin ? t('coinDialog.buttons.add') : t('coinDialog.buttons.save') }}</button>
+      <button mat-button (click)="closeDialog()">{{ t('coinDialog.buttons.cancel') }}</button>
+      <button mat-button cdkFocusInitial (click)="submitCoin()">{{ isNewCoin ? t('coinDialog.buttons.add') : t('coinDialog.buttons.save') }}</button>
     </section>
   </form>
 </ng-container>

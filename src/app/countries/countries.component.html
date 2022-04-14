@@ -32,7 +32,7 @@
           {{ coin.comment }}
         </div>
         <div class="countries__column countries__column--photo">
-          <img *ngFor="let image of coin.image" [src]="image" (click)="openCoin(coin.image)" alt="coin">
+          <img *ngFor="let image of coin.image" [src]="image" (click)="openCoinImageDialog(coin.image)" alt="coin">
         </div>
         <div class="countries__column countries__column--edit">
           <button mat-raised-button color="primary" (click)="openDialog(coin)">{{ t('collection.edit') }}</button>

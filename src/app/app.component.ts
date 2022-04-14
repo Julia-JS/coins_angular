@@ -7,10 +7,4 @@ import {Component, HostListener, ViewChild} from '@angular/core';
 })
 export class AppComponent {
   title = 'coins';
-
-  // public isOpened: boolean;
-
-  // toggle(value): void {
-  //   this.isOpened = value;
-  // }
 }

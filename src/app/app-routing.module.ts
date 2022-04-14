@@ -4,6 +4,7 @@ import {CollectionComponent} from './collection/collection.component';
 import {AnalyticsComponent} from './analytics/analytics.component';
 import {MainComponent} from './main/main.component';
 import {CountriesComponent} from './countries/countries.component';
+import {AdministrationComponent} from './administration/administration.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'analytics',
     component: AnalyticsComponent
+  },
+  {
+    path: 'administration',
+    component: AdministrationComponent
   },
 ];
 

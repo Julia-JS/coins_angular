@@ -1,4 +1,4 @@
-import {Component, HostListener, OnChanges, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {DataShareService} from '../services/data-share.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
@@ -11,34 +11,33 @@ import {Router} from '@angular/router';
 })
 export class SidenavComponent implements OnInit, OnDestroy {
 
-  constructor(private router: Router, public dataShare: DataShareService) { }
+  constructor(private router: Router, public dataShareService: DataShareService) { }
 
   @ViewChild('overlay') overlay;
 
-  private ngUnsubscribe = new Subject<void>();
-
-  public isOpened = false;
+  public isOpened: boolean = false;
+  private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   ngOnInit(): void {
-    this.dataShare.isSidenavOpened
+    this.dataShareService.isSidenavOpened
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(isOpened => this.isOpened = isOpened);
   }
 
-  clickItem(link, status): void {
+  private clickItem(link: string, status: boolean): void {
     this.router.navigate([link]);
-    this.dataShare.toggleSidenavStatus(status);
-  }
-
-  ngOnDestroy(): void {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
+    this.dataShareService.toggleSidenavStatus(status);
   }
 
   @HostListener('document:click', ['$event'])
   onClick(event: Event): void {
     if (this.overlay.nativeElement.contains(event.target)) {
-      this.dataShare.toggleSidenavStatus(!this.isOpened);
+      this.dataShareService.toggleSidenavStatus(!this.isOpened);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 }

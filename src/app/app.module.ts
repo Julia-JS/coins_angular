@@ -23,6 +23,7 @@ import {AnalyticsComponent} from './analytics/analytics.component';
 import {CountriesComponent} from './countries/countries.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CoinImageDialogComponent} from './coin-image-dialog/coin-image-dialog.component';
+import {AdministrationComponent} from './administration/administration.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {CoinImageDialogComponent} from './coin-image-dialog/coin-image-dialog.co
     HeaderComponent,
     SidenavComponent,
     CoinDialogComponent,
+    AdministrationComponent,
     CollectionComponent,
     AnalyticsComponent,
     CountriesComponent,

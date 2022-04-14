@@ -10,20 +10,19 @@ import {Subject} from 'rxjs';
   styleUrls: ['./collection.component.scss']
 })
 export class CollectionComponent implements OnInit, OnDestroy {
-  constructor(private route: ActivatedRoute, private router: Router, private dataShare: DataShareService) {
+  constructor(private route: ActivatedRoute, private router: Router, private dataShareService: DataShareService) {
   }
 
-  private ngUnsubscribe = new Subject<void>();
-
   public isOpened: boolean;
+  private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   ngOnInit(): void {
-    this.dataShare.isSidenavOpened
+    this.dataShareService.isSidenavOpened
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(isOpened => this.isOpened = isOpened);
   }
 
-  setContinent(i): void {
+  setContinent(i: number): void {
     this.router.navigate(['collection', i]);
   }
 

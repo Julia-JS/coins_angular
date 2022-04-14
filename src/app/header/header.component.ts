@@ -1,10 +1,11 @@
-import {Component, AfterContentChecked, ChangeDetectorRef, OnInit, OnDestroy} from '@angular/core';
+import {Component, AfterContentChecked, ChangeDetectorRef, OnInit, OnDestroy, ViewChild, ElementRef} from '@angular/core';
 import {TranslocoService} from '@ngneat/transloco';
 import {MatDialog} from '@angular/material/dialog';
 import {CoinDialogComponent} from '../coin-dialog/coin-dialog.component';
 import {DataShareService} from '../services/data-share.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import {CountryService} from '../services/country.service';
 
 @Component({
   selector: 'app-header',
@@ -12,16 +13,17 @@ import {takeUntil} from 'rxjs/operators';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, AfterContentChecked, OnDestroy {
-
-  constructor(private service: TranslocoService, private changeDetector: ChangeDetectorRef, public dialog: MatDialog, public dataShare: DataShareService) {
+  constructor(private service: TranslocoService,
+              private changeDetector: ChangeDetectorRef,
+              public dialog: MatDialog,
+              public dataShareService: DataShareService) {
   }
 
-  private ngUnsubscribe = new Subject<void>();
-
   public isOpened: boolean;
+  private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   ngOnInit(): void {
-    this.dataShare.isSidenavOpened
+    this.dataShareService.isSidenavOpened
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(isOpened => this.isOpened = isOpened);
   }
@@ -29,7 +31,7 @@ export class HeaderComponent implements OnInit, AfterContentChecked, OnDestroy {
   ngAfterContentChecked(): void {
     this.changeDetector.detectChanges();
 
-    if(this.isOpened) {
+    if (this.isOpened) {
       document.body.style.position = 'fixed';
       document.body.style.top = '0';
       document.body.style.left = '0';
@@ -39,15 +41,16 @@ export class HeaderComponent implements OnInit, AfterContentChecked, OnDestroy {
     }
   }
 
-  change(lang): void {
-    this.service.setActiveLang(lang.value);
+  private changeLang(lang: string): void {
+    this.service.setActiveLang(lang);
+    console.log(typeof lang);
   }
 
-  toggle(value: boolean): void {
-    this.dataShare.toggleSidenavStatus(value);
+  private toggleHamburger(value: boolean): void {
+    this.dataShareService.toggleSidenavStatus(value);
   }
 
-  openDialog(): void {
+  private openDialog(): void {
     this.dialog.open(CoinDialogComponent, {
       width: '30rem',
     });

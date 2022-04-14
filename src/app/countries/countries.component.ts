@@ -1,6 +1,6 @@
 import {
   AfterContentChecked,
-  Component, Inject,
+  Component,
   OnInit
 } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
@@ -8,6 +8,8 @@ import {CoinsService} from '../services/coins.service';
 import {CoinDialogComponent} from '../coin-dialog/coin-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import {CoinImageDialogComponent} from '../coin-image-dialog/coin-image-dialog.component';
+import {TranslocoService} from '@ngneat/transloco';
+import {ICoin} from '../interfaces/coin.interface';
 
 @Component({
   selector: 'app-countries',
@@ -15,11 +17,12 @@ import {CoinImageDialogComponent} from '../coin-image-dialog/coin-image-dialog.c
   styleUrls: ['./countries.component.scss'],
 })
 export class CountriesComponent implements OnInit, AfterContentChecked {
-  public continent = '';
-  public coins = [];
+  public continent: string = '';
+  public coins: Array<ICoin> = [];
 
   constructor(private activatedRoute: ActivatedRoute,
               public dialog: MatDialog,
+              private service: TranslocoService,
               private coinsService: CoinsService) {
     this.fetchCoins();
   }
@@ -37,7 +40,7 @@ export class CountriesComponent implements OnInit, AfterContentChecked {
       }, err => console.log(err));
   }
 
-  delete(id): void {
+  private delete(id: string): void {
     this.coinsService.delete(id)
       .subscribe(res => {
         this.coins = res;
@@ -45,7 +48,7 @@ export class CountriesComponent implements OnInit, AfterContentChecked {
       }, err => console.log(err));
   }
 
-  openDialog(coin): void {
+  private openDialog(coin: ICoin): void {
     this.dialog.open(CoinDialogComponent, {
       width: '30rem',
       data: {
@@ -54,7 +57,7 @@ export class CountriesComponent implements OnInit, AfterContentChecked {
     });
   }
 
-  openCoin(image): void {
+  private openCoinImageDialog(image: Array<string | ArrayBuffer>): void {
     this.dialog.open(CoinImageDialogComponent, {
       width: '55rem',
       height: '28rem',
@@ -66,5 +69,6 @@ export class CountriesComponent implements OnInit, AfterContentChecked {
 
   ngAfterContentChecked(): void {
     this.continent = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log(this.service.getActiveLang());
   }
 }

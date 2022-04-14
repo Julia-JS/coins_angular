@@ -1,8 +1,12 @@
-import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
 import {CoinsService} from '../services/coins.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {Translation} from '@ngneat/transloco';
+import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
+import {ICoin} from '../interfaces/coin.interface';
 
 @Component({
   selector: 'app-coin-dialog',
@@ -10,7 +14,6 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
   styleUrls: ['./coin-dialog.component.scss']
 })
 export class CoinDialogComponent implements OnInit {
-  @ViewChild('input') inputRef: ElementRef;
   coinForm: FormGroup = new FormGroup({
     country: new FormControl(this.data?.dataKey?.country || ''),
     denomination: new FormControl(this.data?.dataKey?.denomination || ''),
@@ -20,28 +23,44 @@ export class CoinDialogComponent implements OnInit {
     comment: new FormControl(this.data?.dataKey?.comment || ''),
     image: new FormControl(''),
   });
-  imagesArray = this.data?.dataKey?.image ? this.data?.dataKey?.image.slice() : [];
-  newArray = [];
-  image: File;
-  imagePreview: any = '';
-
-  isNewCoin = !this.data;
 
   constructor(
     public dialogRef: MatDialogRef<CoinDialogComponent>,
+    private http: HttpClient,
     private coinsService: CoinsService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
   }
 
-  ngOnInit(): void {}
+  @ViewChild('inputFile') inputFileRef: ElementRef;
+  private url = 'https://coins-5cbbb-default-rtdb.europe-west1.firebasedatabase.app/countries';
+  private image: File;
+  private imagePreview: string | ArrayBuffer = '';
+  public imagesArray: Array<string | ArrayBuffer> = this.data?.dataKey?.image ? this.data?.dataKey?.image.slice() : [];
+  public isNewCoin = !this.data;
 
-  triggerClick(): void {
-    this.inputRef.nativeElement.click();
+  ngOnInit(): void {
+    this.getCountries('ru')
+      .subscribe(res => console.log(res)
+      );
   }
 
-  onFileUpload(event: any): void {
-    const file = event.target.files[0];
+  //todo: add type of function return
+  private getCountries(lang: string): any {
+    return this.http.get<Translation>(`${(this.url)}/${lang}.json`)
+      .pipe(map(res => {
+          console.log(res);
+          return res;
+        }
+      ));
+  }
+
+  private triggerInputFileClick(): void {
+    this.inputFileRef.nativeElement.click();
+  }
+
+  private onFileUpload(event: Event): void {
+    const file = (event.target as HTMLInputElement).files[0];
     this.image = file;
     const reader = new FileReader();
     reader.onload = () => {
@@ -52,21 +71,16 @@ export class CoinDialogComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-  close(): void {
+  private closeDialog(): void {
     this.dialogRef.close();
   }
 
-  submit(): void {
+  private submitCoin(): void {
     this.dialogRef.close();
 
     const coin = {
-      country: this.coinForm.value.country,
-      denomination: this.coinForm.value.denomination,
-      currency: this.coinForm.value.currency,
-      year: this.coinForm.value.year,
-      material: this.coinForm.value.material,
-      comment: this.coinForm.value.comment,
-      image: this.imagesArray,
+      ...this.coinForm.value,
+      image: this.imagesArray
     };
 
     if (this.isNewCoin) {
@@ -76,7 +90,7 @@ export class CoinDialogComponent implements OnInit {
     }
   }
 
-  createCoin(coin): void {
+  private createCoin(coin: ICoin): void {
     this.coinsService.create(coin).subscribe(res => {
       this.coinsService.fetch()
         .subscribe(coins => {
@@ -86,9 +100,8 @@ export class CoinDialogComponent implements OnInit {
     }, err => console.log(err));
   }
 
-  updateCoin(id, coin): void {
+  private updateCoin(id: string, coin: ICoin): void {
     this.coinsService.update(id, coin).subscribe(res => {
-      // Object.assign(res, {id});
       this.coinsService.fetch()
         .subscribe(coins => {
           this.coinsService.rerender(coins);
@@ -97,7 +110,7 @@ export class CoinDialogComponent implements OnInit {
     }, err => console.log(err));
   }
 
-  deleteImage(i): void {
+  private deleteImage(i: number): void {
     this.imagesArray.splice(i, 1);
   }
 }

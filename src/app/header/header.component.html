@@ -15,7 +15,7 @@
       <div>
         <mat-form-field appearance="fill">
           <mat-label>{{ t('languages.choose') }}</mat-label>
-          <mat-select (selectionChange)="change($event)">
+          <mat-select (selectionChange)="changeLang($event.value)">
             <mat-option value="ru">{{ t('languages.russian') }}</mat-option>
             <mat-option value="en">{{ t('languages.english') }}</mat-option>
             <mat-option value="es">{{ t('languages.spanish') }}</mat-option>
@@ -23,7 +23,7 @@
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="header__hamburger" (click)="toggle(!isOpened)">
+      <div class="header__hamburger" (click)="toggleHamburger(!isOpened)">
         <div class="header__hamburger--inner" [class.opened]="isOpened"></div>
       </div>
     </div>
