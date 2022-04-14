@@ -1,11 +1,10 @@
 import {Component, AfterContentChecked, ChangeDetectorRef, OnInit, OnDestroy, ViewChild, ElementRef} from '@angular/core';
 import {TranslocoService} from '@ngneat/transloco';
 import {MatDialog} from '@angular/material/dialog';
-import {CoinDialogComponent} from '../coin-dialog/coin-dialog.component';
+import {CoinDialogComponent} from '../modals/coin-dialog/coin-dialog.component';
 import {DataShareService} from '../services/data-share.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {CountryService} from '../services/country.service';
 
 @Component({
   selector: 'app-header',

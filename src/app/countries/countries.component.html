@@ -36,7 +36,7 @@
         </div>
         <div class="countries__column countries__column--edit">
           <button mat-raised-button color="primary" (click)="openDialog(coin)">{{ t('collection.edit') }}</button>
-          <button mat-raised-button color="warn" (click)="delete(coin.id)">{{ t('collection.delete') }}</button>
+          <button mat-raised-button color="warn" (click)="openCoinDeleteDialog(coin.id)">{{ t('collection.delete') }}</button>
         </div>
       </div>
     </div>

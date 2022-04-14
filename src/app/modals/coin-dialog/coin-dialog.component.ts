@@ -1,12 +1,12 @@
-import {Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
-import {CoinsService} from '../services/coins.service';
+import {CoinsService} from '../../services/coins.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {Translation} from '@ngneat/transloco';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import {ICoin} from '../interfaces/coin.interface';
+import {ICoin} from '../../interfaces/coin.interface';
 
 @Component({
   selector: 'app-coin-dialog',
@@ -76,8 +76,6 @@ export class CoinDialogComponent implements OnInit {
   }
 
   private submitCoin(): void {
-    this.dialogRef.close();
-
     const coin = {
       ...this.coinForm.value,
       image: this.imagesArray
@@ -88,6 +86,8 @@ export class CoinDialogComponent implements OnInit {
     } else {
       this.updateCoin(this.data.dataKey.id, coin);
     }
+
+    this.dialogRef.close();
   }
 
   private createCoin(coin: ICoin): void {

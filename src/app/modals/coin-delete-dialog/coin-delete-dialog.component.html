@@ -1,0 +1,7 @@
+<ng-container *transloco="let t;">
+  <div class="coin-delete-dialog__title">{{ t('coinDeleteDialog.title')}}</div>
+  <div class="coin-delete-dialog__buttons">
+    <button mat-button (click)="closeCoinDeleteDialog()">{{ t('coinDeleteDialog.buttons.cancel')}}</button>
+    <button mat-raised-button color="warn" (click)="deleteCoin()">{{ t('coinDeleteDialog.buttons.delete')}}</button>
+  </div>
+</ng-container>

@@ -39,6 +39,13 @@
       "save": "Speichern"
     }
   },
+  "coinDeleteDialog": {
+    "title": "Вы действительно хотите удалить монету?",
+    "buttons": {
+      "cancel": "Отмена",
+      "delete": "Удалить"
+    }
+  },
   "collection": {
     "country": "Land",
     "denomination": "Bezeichnunge",

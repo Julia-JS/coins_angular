@@ -1,7 +1,6 @@
 import {FormControl} from '@angular/forms';
 
 export interface ICoin {
-  id: string;
   country: string;
   denomination: number;
   currency: string;
@@ -9,4 +8,8 @@ export interface ICoin {
   material: string;
   comment: string;
   image: Array<string | ArrayBuffer>;
+}
+
+export interface ICoinResponse extends ICoin{
+  id: string;
 }

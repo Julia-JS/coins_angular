@@ -39,6 +39,13 @@
       "add": "Добавить"
     }
   },
+  "coinDeleteDialog": {
+    "title": "Вы действительно хотите удалить монету?",
+    "buttons": {
+      "cancel": "Отмена",
+      "delete": "Удалить"
+    }
+  },
   "collection": {
     "country": "Страна",
     "denomination": "Номинал",

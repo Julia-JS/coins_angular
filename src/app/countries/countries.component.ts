@@ -1,15 +1,12 @@
-import {
-  AfterContentChecked,
-  Component,
-  OnInit
-} from '@angular/core';
+import {AfterContentChecked, Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {CoinsService} from '../services/coins.service';
-import {CoinDialogComponent} from '../coin-dialog/coin-dialog.component';
+import {CoinDialogComponent} from '../modals/coin-dialog/coin-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
-import {CoinImageDialogComponent} from '../coin-image-dialog/coin-image-dialog.component';
+import {CoinImageDialogComponent} from '../modals/coin-image-dialog/coin-image-dialog.component';
 import {TranslocoService} from '@ngneat/transloco';
-import {ICoin} from '../interfaces/coin.interface';
+import {ICoinResponse} from '../interfaces/coin.interface';
+import {CoinDeleteDialogComponent} from '../modals/coin-delete-dialog/coin-delete-dialog.component';
 
 @Component({
   selector: 'app-countries',
@@ -18,7 +15,7 @@ import {ICoin} from '../interfaces/coin.interface';
 })
 export class CountriesComponent implements OnInit, AfterContentChecked {
   public continent: string = '';
-  public coins: Array<ICoin> = [];
+  public coins: Array<ICoinResponse> = [];
 
   constructor(private activatedRoute: ActivatedRoute,
               public dialog: MatDialog,
@@ -40,15 +37,7 @@ export class CountriesComponent implements OnInit, AfterContentChecked {
       }, err => console.log(err));
   }
 
-  private delete(id: string): void {
-    this.coinsService.delete(id)
-      .subscribe(res => {
-        this.coins = res;
-        this.fetchCoins();
-      }, err => console.log(err));
-  }
-
-  private openDialog(coin: ICoin): void {
+  private openDialog(coin: ICoinResponse): void {
     this.dialog.open(CoinDialogComponent, {
       width: '30rem',
       data: {
@@ -63,6 +52,16 @@ export class CountriesComponent implements OnInit, AfterContentChecked {
       height: '28rem',
       data: {
         dataKey: image
+      }
+    });
+  }
+
+  private openCoinDeleteDialog(id: string): void {
+    console.log(id);
+    this.dialog.open(CoinDeleteDialogComponent, {
+      width: '30rem',
+      data: {
+        dataKey: id
       }
     });
   }

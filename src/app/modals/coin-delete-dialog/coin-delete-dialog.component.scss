@@ -1,0 +1,17 @@
+.coin-delete-dialog {
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2rem;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    button + button {
+      margin-left: 1rem;
+    }
+  }
+}
