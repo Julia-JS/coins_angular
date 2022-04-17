@@ -11,6 +11,10 @@
   },
   "sidenav": [
     {
+      "name": "Главная",
+      "link": ""
+    },
+    {
       "name": "Colección",
       "link": "collection"
     },

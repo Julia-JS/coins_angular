@@ -16,6 +16,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
   @ViewChild('overlay') overlay;
 
   public isOpened: boolean = false;
+  public activeItem: number = 0;
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   ngOnInit(): void {
@@ -24,12 +25,13 @@ export class SidenavComponent implements OnInit, OnDestroy {
       .subscribe(isOpened => this.isOpened = isOpened);
   }
 
-  private clickItem(link: string, status: boolean): void {
+  private clickItem(link: string, status: boolean, i: number): void {
     if (link === 'collection') {
       this.router.navigate([link, 'Europe']);
     } else {
       this.router.navigate([link]);
     }
+    this.activeItem = i;
     this.dataShareService.toggleSidenavStatus(status);
   }
 

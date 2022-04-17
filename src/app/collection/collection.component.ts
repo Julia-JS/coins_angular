@@ -14,6 +14,7 @@ export class CollectionComponent implements OnInit, OnDestroy {
   }
 
   public isOpened: boolean;
+  public activeContinent: number = 3;
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   ngOnInit(): void {
@@ -22,8 +23,10 @@ export class CollectionComponent implements OnInit, OnDestroy {
       .subscribe(isOpened => this.isOpened = isOpened);
   }
 
-  setContinent(i: number): void {
-    this.router.navigate(['collection', i]);
+  setActiveContinent(id: string, i): void {
+    console.log(i);
+    this.router.navigate(['collection', id]);
+    this.activeContinent = i;
   }
 
   ngOnDestroy(): void {

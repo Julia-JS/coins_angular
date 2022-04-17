@@ -47,9 +47,13 @@
     font-size: 1.25rem;
     border-bottom: 1px solid black;
 
-    &:hover {
+    &:hover:not(.sidenav__item--active) {
       opacity: 0.7;
       cursor: pointer;
+    }
+
+    &--active {
+      text-decoration: underline;
     }
   }
 }
