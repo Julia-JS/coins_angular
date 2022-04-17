@@ -16,7 +16,6 @@ export class CoinDeleteDialogComponent implements OnInit {
   public coins: Array<ICoinResponse> = [];
 
   ngOnInit(): void {
-    console.log(this.data.dataKey);
   }
 
   private fetchCoins(): void {

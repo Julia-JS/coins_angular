@@ -1,4 +1,10 @@
 .coin-image-dialog {
   display: flex;
   justify-content: space-between;
+
+  &__img {
+    + .coin-image-dialog__img {
+      margin-left: 2rem;
+    }
+  }
 }

@@ -6,12 +6,19 @@
       <mat-form-field appearance="fill">
         <mat-label>{{ t('coinDialog.country') }}</mat-label>
         <mat-select formControlName="country">
-          <mat-optgroup *ngFor="let continent of t('continents'); index as i" [label]="t('continents')[i].name">
-            <mat-option [value]="country"
-                        *ngFor="let country of continent.countries; index as i">
-              {{ country }}
+          <mat-optgroup *ngFor="let continent of continents" [label]="continent.continent">
+            <mat-option *ngFor="let country of continent.countries" [value]="country">
+              {{ country[activeLang] }}
             </mat-option>
           </mat-optgroup>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ t('coinDialog.coinOrBanknote') }}</mat-label>
+        <mat-select  formControlName="coinOrBanknote">
+          <mat-option *ngFor="let cb of t('coinOrBanknote')" [value]="cb.type">
+            {{ cb.type }}
+          </mat-option>
         </mat-select>
       </mat-form-field>
     </section>

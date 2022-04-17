@@ -25,7 +25,11 @@ export class SidenavComponent implements OnInit, OnDestroy {
   }
 
   private clickItem(link: string, status: boolean): void {
-    this.router.navigate([link]);
+    if (link === 'collection') {
+      this.router.navigate([link, 'Europe']);
+    } else {
+      this.router.navigate([link]);
+    }
     this.dataShareService.toggleSidenavStatus(status);
   }
 

@@ -42,7 +42,6 @@ export class HeaderComponent implements OnInit, AfterContentChecked, OnDestroy {
 
   private changeLang(lang: string): void {
     this.service.setActiveLang(lang);
-    console.log(typeof lang);
   }
 
   private toggleHamburger(value: boolean): void {

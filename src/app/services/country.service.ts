@@ -13,9 +13,10 @@ export class CountryService {
   }
 
   create(country): Observable<any> {
-    console.log(country.countryRu.split('/')[0]);
+    console.log(country);
     return this.http
-      .post<any>(`${this.url}/ru/${country.countryRu.split('/')[0]}.json`, {country: country.countryRu.split('/')[1]})
+      .post<any>(`${this.url}/${country.continent.id}/countries.json`,
+        {ru: country.ru, en: country.en, es: country.es, de: country.de})
       .pipe(map(res => {
         console.log(res);
         return res;

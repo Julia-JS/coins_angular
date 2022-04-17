@@ -5,6 +5,7 @@ export interface ICoin {
   denomination: number;
   currency: string;
   year: number;
+  coinOrBanknote: string;
   material: string;
   comment: string;
   image: Array<string | ArrayBuffer>;
