@@ -31,7 +31,7 @@
     "titleAdd": "Add new coin",
     "titleEdit": "Edit coin",
     "country": "Country",
-    "coinOrBanknote": "Coin or banknote",
+    "type": "Coin or banknote",
     "denomination": "Denomination",
     "currency": "Currency",
     "year": "Year",
@@ -57,20 +57,87 @@
     "currency": "Currency",
     "year": "Year",
     "material": "Material",
-    "coinOrBanknote": "Coin or banknote",
+    "type": "Coin or banknote",
     "comment": "Comment",
     "photo": "Photo",
     "edit": "Edit",
     "delete": "Delete"
   },
+  "countries": {
+    "AustraliaAndOceania": {
+      "id": "AustraliaAndOceania",
+      "name": "Australia and Oceania",
+      "countries": {
+        "Australia": {
+          "id": "Australia",
+          "name": "Australia"
+        },
+        "Fiji": {
+          "id": "Fiji",
+          "name": "Fiji"
+        }
+      }
+    },
+    "Africa": {
+      "id": "Africa",
+      "name": "Africa",
+      "countries": {
+        "Ghana": {
+          "id": "Ghana",
+          "name": "Ghana"
+        }
+      }
+    },
+    "Asia": {
+      "id": "Asia",
+      "name": "Asia",
+      "countries": {}
+    },
+    "Europe": {
+      "id": "Europe",
+      "name": "Europe",
+      "countries": {
+        "Russia": {
+          "id": "Russia",
+          "name": "Russia"
+        }
+      }
+    },
+    "NorthAmerica": {
+      "id": "NorthAmerica",
+      "name": "NorthAmerica",
+      "countries": {}
+    },
+    "SouthAmerica": {
+      "id": "SouthAmerica",
+      "name": "SouthAmerica",
+      "countries": {}
+    }
+  },
   "continents": [
     {
-      "id": "Australia and Oceania",
-      "name": "Australia and Oceania"
+      "id": "AustraliaAndOceania",
+      "name": "Australia And Oceania",
+      "countries": [
+        {
+          "id": "Australia",
+          "name": "Australia"
+        },
+        {
+          "id": "Fiji",
+          "name": "Fiji"
+        }
+      ]
     },
     {
       "id": "Africa",
-      "name": "Africa"
+      "name": "Africa",
+      "countries": [
+        {
+          "id": "Ghana",
+          "name": "Ghana"
+        }
+      ]
     },
     {
       "id": "Asia",
@@ -78,23 +145,22 @@
     },
     {
       "id": "Europe",
-      "name": "Europe"
+      "name": "Europe",
+      "countries": [
+        {
+          "id": "Russia",
+          "name": "Russia"
+        }
+      ]
     },
     {
-      "id": "North America",
+      "id": "NorthAmerica",
       "name": "North America"
     },
     {
-      "id": "South America",
+      "id": "SouthAmerica",
       "name": "South America"
     }
   ],
-  "coinOrBanknote": [
-    {
-      "type": "Coin"
-    },
-    {
-      "type": "Banknote"
-    }
-  ]
+  "types": ["Coin", "Banknote"]
 }

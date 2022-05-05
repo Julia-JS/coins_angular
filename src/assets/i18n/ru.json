@@ -31,7 +31,7 @@
     "titleAdd": "Добавить новую монету",
     "titleEdit": "Редактировать монету",
     "country": "Страна",
-    "coinOrBanknote": "Монета или банкнота",
+    "type": "Монета или банкнота",
     "denomination": "Номинал",
     "currency": "Валюта",
     "year": "Год выпуска",
@@ -57,20 +57,87 @@
     "currency": "Валюта",
     "year": "Год выпуска",
     "material": "Материал",
-    "coinOrBanknote": "Монета или банкнота",
+    "type": "Монета или банкнота",
     "comment": "Комментарий",
     "photo": "Фото",
     "edit": "Редактировать",
     "delete": "Удалить"
   },
+  "countries": {
+    "AustraliaAndOceania": {
+      "id": "AustraliaAndOceania",
+      "name": "Австралия и Океания",
+      "countries": {
+        "Australia": {
+          "id": "Australia",
+          "name": "Австралия"
+        },
+        "Fiji": {
+          "id": "Fiji",
+          "name": "Фиджи"
+        }
+      }
+    },
+    "Africa": {
+      "id": "Africa",
+      "name": "Африка",
+      "countries": {
+        "Ghana": {
+          "id": "Ghana",
+          "name": "Гана"
+        }
+      }
+    },
+    "Asia": {
+      "id": "Asia",
+      "name": "Азия",
+      "countries": {}
+    },
+    "Europe": {
+      "id": "Europe",
+      "name": "Европа",
+      "countries": {
+        "Russia": {
+          "id": "Russia",
+          "name": "Россия"
+        }
+      }
+    },
+    "NorthAmerica": {
+      "id": "NorthAmerica",
+      "name": "Северная Америка",
+      "countries": {}
+    },
+    "SouthAmerica": {
+      "id": "SouthAmerica",
+      "name": "Южная Америка",
+      "countries": {}
+    }
+  },
   "continents": [
     {
-      "id": "Australia and Oceania",
-      "name": "Австралия и Океания"
+      "id": "AustraliaAndOceania",
+      "name": "Австралия и Океания",
+      "countries": [
+        {
+          "id": "Australia",
+          "name": "Австралия"
+        },
+        {
+          "id": "Fiji",
+          "name": "Фиджи"
+        }
+      ]
     },
     {
       "id": "Africa",
-      "name": "Африка"
+      "name": "Африка",
+      "countries": [
+        {
+          "id": "Ghana",
+          "name": "Гана"
+        }
+      ]
     },
     {
       "id": "Asia",
@@ -78,23 +145,22 @@
     },
     {
       "id": "Europe",
-      "name": "Европа"
+      "name": "Европа",
+      "countries": [
+        {
+          "id": "Russia",
+          "name": "Россия"
+        }
+      ]
     },
     {
-      "id": "North America",
+      "id": "NorthAmerica",
       "name": "Северная Америка"
     },
     {
-      "id": "South America",
+      "id": "SouthAmerica",
       "name": "Южная Америка"
     }
   ],
-  "coinOrBanknote": [
-    {
-      "type": "Монета"
-    },
-    {
-      "type": "Банкнота"
-    }
-  ]
+  "types": ["Монета", "Банкнота"]
 }

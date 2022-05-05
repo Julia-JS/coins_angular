@@ -22,7 +22,9 @@ export class SidenavComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.dataShareService.isSidenavOpened
       .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe(isOpened => this.isOpened = isOpened);
+      .subscribe(isOpened => {
+        this.isOpened = isOpened;
+      });
   }
 
   private clickItem(link: string, status: boolean, i: number): void {

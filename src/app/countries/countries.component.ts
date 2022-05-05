@@ -1,70 +1,61 @@
-import {AfterContentChecked, AfterContentInit, AfterViewChecked, Component, OnInit} from '@angular/core';
-import {ActivatedRoute, NavigationStart, Router} from '@angular/router';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {CoinsService} from '../services/coins.service';
 import {CoinDialogComponent} from '../modals/coin-dialog/coin-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import {CoinImageDialogComponent} from '../modals/coin-image-dialog/coin-image-dialog.component';
-import {Translation, TranslocoService} from '@ngneat/transloco';
+import {TranslocoService} from '@ngneat/transloco';
 import {ICoinResponse} from '../interfaces/coin.interface';
 import {CoinDeleteDialogComponent} from '../modals/coin-delete-dialog/coin-delete-dialog.component';
-import {map} from 'rxjs/operators';
+import {takeUntil} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-countries',
   templateUrl: './countries.component.html',
   styleUrls: ['./countries.component.scss'],
 })
-export class CountriesComponent implements OnInit, AfterContentChecked {
+
+export class CountriesComponent implements OnInit, OnDestroy {
   constructor(private router: Router,
               private http: HttpClient,
               private activatedRoute: ActivatedRoute,
               public dialog: MatDialog,
               private translocoService: TranslocoService,
               private coinsService: CoinsService) {
-    this.fetchCoins();
   }
 
   public continents = [];
-  public continent: string = this.activatedRoute.snapshot.paramMap.get('id');
-  public activeContinent: string = 'Europe';
-  public coins: Array<ICoinResponse> = [];
-  public activeLang = 'ru';
-  private url = 'https://coins-5cbbb-default-rtdb.europe-west1.firebasedatabase.app/countries';
+  public currentContinent: string | null = this.activatedRoute.snapshot.paramMap.get('id');
+  public coins: Array<ICoinResponse>;
+  private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   ngOnInit(): void {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationStart) {
-        this.fetchCoins();
-      }
-    });
-
-    this.getContinents()
+    this.coinsService.coins
+      .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(res => {
-        this.continents = res;
+        this.coins = res.filter(coin => coin.continent === this.currentContinent);
       });
 
-    this.getActiveContinet();
+    this.fetchCoins();
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.fetchCoins();
+        this.getActiveContinent();
+      }
+    });
   }
 
-  private getActiveContinet(): void {
-    this.activeLang = this.translocoService.getActiveLang();
-    this.continent = this.activatedRoute.snapshot.paramMap.get('id');
-    this.activeContinent = Object.entries(this.continents).filter(continent => continent[0] === this.continent)[0][1][this.activeLang];
-  }
-
-  private getContinents(): any {
-    return this.http.get<Translation>(`${(this.url)}.json`)
-      .pipe(map(res => {
-          return res;
-        }
-      ));
+  private getActiveContinent(): void {
+    this.currentContinent = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
   private fetchCoins(): void {
     this.coinsService.fetch()
       .subscribe(res => {
-        this.coins = res.filter(coin => coin.continent === this.continent);
+        this.coins = res.filter(coin => coin.continent === this.currentContinent);
       }, err => console.log(err));
   }
 
@@ -96,7 +87,8 @@ export class CountriesComponent implements OnInit, AfterContentChecked {
     });
   }
 
-  ngAfterContentChecked(): void {
-    this.getActiveContinet();
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 }

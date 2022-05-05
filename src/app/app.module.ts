@@ -25,6 +25,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CoinImageDialogComponent} from './modals/coin-image-dialog/coin-image-dialog.component';
 import {AdministrationComponent} from './administration/administration.component';
 import {CoinDeleteDialogComponent} from './modals/coin-delete-dialog/coin-delete-dialog.component';
+import {CollectionItemComponent} from './collection/collection-item/collection-item.component';
+import {MainComponent} from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +34,14 @@ import {CoinDeleteDialogComponent} from './modals/coin-delete-dialog/coin-delete
     HeaderComponent,
     SidenavComponent,
     CoinDialogComponent,
+    MainComponent,
     AdministrationComponent,
     CollectionComponent,
+    CollectionItemComponent,
     AnalyticsComponent,
     CountriesComponent,
     CoinImageDialogComponent,
-    CoinDeleteDialogComponent
+    CoinDeleteDialogComponent,
   ],
   imports: [
     BrowserModule,

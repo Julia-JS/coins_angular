@@ -31,7 +31,7 @@
     "titleAdd": "Neue Münze hinzufügen",
     "titleEdit": "Münze bearbeiten",
     "country": "Land",
-    "coinOrBanknote": "Münze oder Banknote",
+    "type": "Münze oder Banknote",
     "denomination": "Bezeichnunge",
     "currency": "Währung",
     "year": "Jahr",
@@ -57,16 +57,77 @@
     "currency": "Währung",
     "year": "Jahr",
     "material": "Material",
-    "coinOrBanknote": "Münze oder Banknote",
+    "type": "Münze oder Banknote",
     "comment": "Kommentar",
     "photo": "Foto",
     "edit": "Bearbeiten",
     "delete": "Löschen"
   },
+  "countries": {
+    "AustraliaAndOceania": {
+      "id": "AustraliaAndOceania",
+      "name": "Australien und Ozeanien",
+      "countries": {
+        "Australia": {
+          "id": "Australia",
+          "name": "Australien"
+        },
+        "Fiji": {
+          "id": "Fiji",
+          "name": "Fidschi"
+        }
+      }
+    },
+    "Africa": {
+      "id": "Africa",
+      "name": "Africa",
+      "countries": {
+        "Ghana": {
+          "id": "Ghana",
+          "name": "Ghana"
+        }
+      }
+    },
+    "Asia": {
+      "id": "Asia",
+      "name": "Asien",
+      "countries": {}
+    },
+    "Europe": {
+      "id": "Europe",
+      "name": "Europa",
+      "countries": {
+        "Russia": {
+          "id": "Russia",
+          "name": "Russland"
+        }
+      }
+    },
+    "NorthAmerica": {
+      "id": "NorthAmerica",
+      "name": "Nordamerika",
+      "countries": {}
+    },
+    "SouthAmerica": {
+      "id": "SouthAmerica",
+      "name": "Südamerika",
+      "countries": {}
+    }
+  },
   "continents": [
     {
-      "id": "Australia and Oceania",
-      "name": "Australia and Oceania"
+      "id": "AustraliaAndOceania",
+      "name": "Australia and Oceania",
+      "countries": [
+        {
+          "id": "Australia",
+          "name": "Australien"
+        },
+        {
+          "id": "Fiji",
+          "name": "Fidschi"
+        }
+      ]
     },
     {
       "id": "Africa",
@@ -78,23 +139,22 @@
     },
     {
       "id": "Europe",
-      "name": "Europa"
+      "name": "Europa",
+      "countries": [
+        {
+          "id": "Russia",
+          "name": "Russland"
+        }
+      ]
     },
     {
-      "id": "North America",
+      "id": "NorthAmerica",
       "name": "Nordamerika"
     },
     {
-      "id": "South America",
+      "id": "SouthAmerica",
       "name": "Südamerika"
     }
   ],
-  "coinOrBanknote": [
-    {
-      "type": "Münze"
-    },
-    {
-      "type": "Banknote"
-    }
-  ]
+  "types": ["Münze", "Banknote"]
 }

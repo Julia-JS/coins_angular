@@ -7,16 +7,14 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CountryService {
-  private url = 'https://coins-5cbbb-default-rtdb.europe-west1.firebasedatabase.app/countries';
-
   constructor(private http: HttpClient) {
   }
 
   create(country): Observable<any> {
-    console.log(country);
+    console.log(country.continent.id);
     return this.http
-      .post<any>(`${this.url}/${country.continent.id}/countries.json`,
-        {ru: country.ru, en: country.en, es: country.es, de: country.de})
+      .post<any>(`http://localhost:3000/countries`,
+        {ru: country.ru, en: country.en, es: country.es, de: country.de, continent: country.continent.id})
       .pipe(map(res => {
         console.log(res);
         return res;

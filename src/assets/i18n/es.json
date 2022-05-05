@@ -31,7 +31,7 @@
     "titleAdd": "Agregar nueva moneda",
     "titleEdit": "Editar moneda",
     "country": "País",
-    "coinOrBanknote": "Moneda o billete",
+    "type": "Moneda o billete",
     "denomination": "Denominación",
     "currency": "Divisa",
     "year": "Año",
@@ -57,20 +57,87 @@
     "currency": "Divisa",
     "year": "Año",
     "material": "Material",
-    "coinOrBanknote": "Moneda o billete",
+    "type": "Moneda o billete",
     "comment": "Comentario",
     "photo": "Foto",
     "edit": "Editar",
     "delete": "Borrar"
   },
+  "countries": {
+    "AustraliaAndOceania": {
+      "id": "AustraliaAndOceania",
+      "name": "Australia y Oceanía",
+      "countries": {
+        "Australia": {
+          "id": "Australia",
+          "name": "Australia"
+        },
+        "Fiji": {
+          "id": "Fiji",
+          "name": "Fiyi"
+        }
+      }
+    },
+    "Africa": {
+      "id": "Africa",
+      "name": "África",
+      "countries": {
+        "Ghana": {
+          "id": "Ghana",
+          "name": "Ghana"
+        }
+      }
+    },
+    "Asia": {
+      "id": "Asia",
+      "name": "Asia",
+      "countries": {}
+    },
+    "Europe": {
+      "id": "Europe",
+      "name": "Europa",
+      "countries": {
+        "Russia": {
+          "id": "Russia",
+          "name": "Rusia"
+        }
+      }
+    },
+    "NorthAmerica": {
+      "id": "NorthAmerica",
+      "name": "Norteamérica",
+      "countries": {}
+    },
+    "SouthAmerica": {
+      "id": "SouthAmerica",
+      "name": "Sudamerica",
+      "countries": {}
+    }
+  },
   "continents": [
     {
-      "id": "Australia and Oceania",
-      "name": "Australia y Oceanía"
+      "id": "AustraliaAndOceania",
+      "name": "Australia y Oceanía",
+      "countries": [
+        {
+          "id": "Australia",
+          "name": "Australia"
+        },
+        {
+          "id": "Fiji",
+          "name": "Fiyi"
+        }
+      ]
     },
     {
       "id": "Africa",
-      "name": "África"
+      "name": "África",
+      "countries": [
+        {
+          "id": "Ghana",
+          "name": "Ghana"
+        }
+      ]
     },
     {
       "id": "Asia",
@@ -78,23 +145,22 @@
     },
     {
       "id": "Europe",
-      "name": "Europa"
+      "name": "Europa",
+      "countries": [
+        {
+          "id": "Russia",
+          "name": "Rusia"
+        }
+      ]
     },
     {
-      "id": "North America",
+      "id": "NorthAmerica",
       "name": "Norteamérica"
     },
     {
-      "id": "South America",
+      "id": "SouthAmerica",
       "name": "Sudamerica"
     }
   ],
-  "coinOrBanknote": [
-    {
-      "type": "moneda"
-    },
-    {
-      "type": "billete"
-    }
-  ]
+  "types": ["moneda", "billete"]
 }

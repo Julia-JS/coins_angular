@@ -1,10 +1,11 @@
 <ng-container *transloco="let t;">
   <div class="collection" [class.collection--opened]="isOpened">
-    <div class="collection__item" *ngFor="let continent of t('continents'); index as i"
-         (click)="setActiveContinent(continent.id, i)"
-         [class.collection__item--active]="activeContinent === i">
-      {{ t('continents')[i].name }}
-    </div>
+    <app-collection-item *ngFor="let continent of t('continents'); index as i"
+                         class="collection__item"
+                         [continentName]="continent.name"
+                         routerLinkActive="collection__item--active"
+                         [routerLink]="['/collection/', continent.id]">
+    </app-collection-item>
   </div>
   <router-outlet></router-outlet>
 </ng-container>
