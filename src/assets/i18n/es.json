@@ -1,166 +1,166 @@
 {
-  "header": {
-    "title": "Monedas",
-    "languages": {
-      "choose": "Seleccione idioma",
-      "russian": "Русский",
-      "english": "English",
-      "spanish": "Español",
-      "german": "Deutsch"
-    }
-  },
-  "sidenav": [
-    {
-      "name": "Главная",
-      "link": ""
-    },
-    {
-      "name": "Colección",
-      "link": "collection"
-    },
-    {
-      "name": "Analítica",
-      "link": "analytics"
-    },
-    {
-      "name": "Сontrol",
-      "link": "administration"
-    }
-  ],
-  "coinDialog": {
-    "titleAdd": "Agregar nueva moneda",
-    "titleEdit": "Editar moneda",
-    "country": "País",
-    "type": "Moneda o billete",
-    "denomination": "Denominación",
-    "currency": "Divisa",
-    "year": "Año",
-    "material": "Material",
-    "comment": "Comentario",
-    "addPhoto": "Añadir foto",
-    "buttons": {
-      "cancel": "Cancelar",
-      "add": "Agregar",
-      "save": "Salvar"
-    }
-  },
-  "coinDeleteDialog": {
-    "title": "¿Está seguro de que desea eliminar la moneda?",
-    "buttons": {
-      "cancel": "Cancelar",
-      "delete": "Borrar"
-    }
-  },
-  "collection": {
-    "country": "País",
-    "denomination": "Denominación",
-    "currency": "Divisa",
-    "year": "Año",
-    "material": "Material",
-    "type": "Moneda o billete",
-    "comment": "Comentario",
-    "photo": "Foto",
-    "edit": "Editar",
-    "delete": "Borrar"
-  },
-  "countries": {
-    "AustraliaAndOceania": {
-      "id": "AustraliaAndOceania",
-      "name": "Australia y Oceanía",
-      "countries": {
-        "Australia": {
-          "id": "Australia",
-          "name": "Australia"
-        },
-        "Fiji": {
-          "id": "Fiji",
-          "name": "Fiyi"
+    "header": {
+        "title": "Monedas",
+        "languages": {
+            "choose": "Seleccione idioma",
+            "russian": "Русский",
+            "english": "English",
+            "spanish": "Español",
+            "german": "Deutsch"
         }
-      }
     },
-    "Africa": {
-      "id": "Africa",
-      "name": "África",
-      "countries": {
-        "Ghana": {
-          "id": "Ghana",
-          "name": "Ghana"
-        }
-      }
-    },
-    "Asia": {
-      "id": "Asia",
-      "name": "Asia",
-      "countries": {}
-    },
-    "Europe": {
-      "id": "Europe",
-      "name": "Europa",
-      "countries": {
-        "Russia": {
-          "id": "Russia",
-          "name": "Rusia"
-        }
-      }
-    },
-    "NorthAmerica": {
-      "id": "NorthAmerica",
-      "name": "Norteamérica",
-      "countries": {}
-    },
-    "SouthAmerica": {
-      "id": "SouthAmerica",
-      "name": "Sudamerica",
-      "countries": {}
-    }
-  },
-  "continents": [
-    {
-      "id": "AustraliaAndOceania",
-      "name": "Australia y Oceanía",
-      "countries": [
+    "sidenav": [
         {
-          "id": "Australia",
-          "name": "Australia"
+            "name": "Главная",
+            "link": ""
         },
         {
-          "id": "Fiji",
-          "name": "Fiyi"
-        }
-      ]
-    },
-    {
-      "id": "Africa",
-      "name": "África",
-      "countries": [
+            "name": "Colección",
+            "link": "collection"
+        },
         {
-          "id": "Ghana",
-          "name": "Ghana"
-        }
-      ]
-    },
-    {
-      "id": "Asia",
-      "name": "Asia"
-    },
-    {
-      "id": "Europe",
-      "name": "Europa",
-      "countries": [
+            "name": "Analítica",
+            "link": "analytics"
+        },
         {
-          "id": "Russia",
-          "name": "Rusia"
+            "name": "Сontrol",
+            "link": "administration"
         }
-      ]
+    ],
+    "coinDialog": {
+        "titleAdd": "Agregar nueva moneda",
+        "titleEdit": "Editar moneda",
+        "country": "País",
+        "type": "Moneda o billete",
+        "denomination": "Denominación",
+        "currency": "Divisa",
+        "year": "Año",
+        "material": "Material",
+        "comment": "Comentario",
+        "addPhoto": "Añadir foto",
+        "buttons": {
+            "cancel": "Cancelar",
+            "add": "Agregar",
+            "save": "Salvar"
+        }
     },
-    {
-      "id": "NorthAmerica",
-      "name": "Norteamérica"
+    "coinDeleteDialog": {
+        "title": "¿Está seguro de que desea eliminar la moneda?",
+        "buttons": {
+            "cancel": "Cancelar",
+            "delete": "Borrar"
+        }
     },
-    {
-      "id": "SouthAmerica",
-      "name": "Sudamerica"
-    }
-  ],
-  "types": ["moneda", "billete"]
+    "collection": {
+        "country": "País",
+        "denomination": "Denominación",
+        "currency": "Divisa",
+        "year": "Año",
+        "material": "Material",
+        "type": "Moneda o billete",
+        "comment": "Comentario",
+        "photo": "Foto",
+        "edit": "Editar",
+        "delete": "Borrar"
+    },
+    "countries": {
+        "AustraliaAndOceania": {
+            "id": "AustraliaAndOceania",
+            "name": "Australia y Oceanía",
+            "countries": {
+                "Australia": {
+                    "id": "Australia",
+                    "name": "Australia"
+                },
+                "Fiji": {
+                    "id": "Fiji",
+                    "name": "Fiyi"
+                }
+            }
+        },
+        "Africa": {
+            "id": "Africa",
+            "name": "África",
+            "countries": {
+                "Ghana": {
+                    "id": "Ghana",
+                    "name": "Ghana"
+                }
+            }
+        },
+        "Asia": {
+            "id": "Asia",
+            "name": "Asia",
+            "countries": {}
+        },
+        "Europe": {
+            "id": "Europe",
+            "name": "Europa",
+            "countries": {
+                "Russia": {
+                    "id": "Russia",
+                    "name": "Rusia"
+                }
+            }
+        },
+        "NorthAmerica": {
+            "id": "NorthAmerica",
+            "name": "Norteamérica",
+            "countries": {}
+        },
+        "SouthAmerica": {
+            "id": "SouthAmerica",
+            "name": "Sudamerica",
+            "countries": {}
+        }
+    },
+    "continents": [
+        {
+            "id": "AustraliaAndOceania",
+            "name": "Australia y Oceanía",
+            "countries": [
+                {
+                    "id": "Australia",
+                    "name": "Australia"
+                },
+                {
+                    "id": "Fiji",
+                    "name": "Fiyi"
+                }
+            ]
+        },
+        {
+            "id": "Africa",
+            "name": "África",
+            "countries": [
+                {
+                    "id": "Ghana",
+                    "name": "Ghana"
+                }
+            ]
+        },
+        {
+            "id": "Asia",
+            "name": "Asia"
+        },
+        {
+            "id": "Europe",
+            "name": "Europa",
+            "countries": [
+                {
+                    "id": "Russia",
+                    "name": "Rusia"
+                }
+            ]
+        },
+        {
+            "id": "NorthAmerica",
+            "name": "Norteamérica"
+        },
+        {
+            "id": "SouthAmerica",
+            "name": "Sudamerica"
+        }
+    ],
+    "types": ["moneda", "billete"]
 }

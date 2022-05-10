@@ -1,166 +1,166 @@
 {
-  "header": {
-    "title": "Coins",
-    "languages": {
-      "choose": "Choose language",
-      "russian": "Русский",
-      "english": "English",
-      "spanish": "Español",
-      "german": "Deutsch"
-    }
-  },
-  "sidenav": [
-    {
-      "name": "Главная",
-      "link": ""
-    },
-    {
-      "name": "Collection",
-      "link": "collection"
-    },
-    {
-      "name": "Analytics",
-      "link": "analytics"
-    },
-    {
-      "name": "Administration",
-      "link": "administration"
-    }
-  ],
-  "coinDialog": {
-    "titleAdd": "Add new coin",
-    "titleEdit": "Edit coin",
-    "country": "Country",
-    "type": "Coin or banknote",
-    "denomination": "Denomination",
-    "currency": "Currency",
-    "year": "Year",
-    "material": "Material",
-    "comment": "Comment",
-    "addPhoto": "Add photo",
-    "buttons": {
-      "cancel": "Cancel",
-      "add": "Add",
-      "save": "Save"
-    }
-  },
-  "coinDeleteDialog": {
-    "title": "Are you sure you want to delete the coin?",
-    "buttons": {
-      "cancel": "Cancel",
-      "delete": "Delete"
-    }
-  },
-  "collection": {
-    "country": "Country",
-    "denomination": "Denomination",
-    "currency": "Currency",
-    "year": "Year",
-    "material": "Material",
-    "type": "Coin or banknote",
-    "comment": "Comment",
-    "photo": "Photo",
-    "edit": "Edit",
-    "delete": "Delete"
-  },
-  "countries": {
-    "AustraliaAndOceania": {
-      "id": "AustraliaAndOceania",
-      "name": "Australia and Oceania",
-      "countries": {
-        "Australia": {
-          "id": "Australia",
-          "name": "Australia"
-        },
-        "Fiji": {
-          "id": "Fiji",
-          "name": "Fiji"
+    "header": {
+        "title": "Coins",
+        "languages": {
+            "choose": "Choose language",
+            "russian": "Русский",
+            "english": "English",
+            "spanish": "Español",
+            "german": "Deutsch"
         }
-      }
     },
-    "Africa": {
-      "id": "Africa",
-      "name": "Africa",
-      "countries": {
-        "Ghana": {
-          "id": "Ghana",
-          "name": "Ghana"
-        }
-      }
-    },
-    "Asia": {
-      "id": "Asia",
-      "name": "Asia",
-      "countries": {}
-    },
-    "Europe": {
-      "id": "Europe",
-      "name": "Europe",
-      "countries": {
-        "Russia": {
-          "id": "Russia",
-          "name": "Russia"
-        }
-      }
-    },
-    "NorthAmerica": {
-      "id": "NorthAmerica",
-      "name": "NorthAmerica",
-      "countries": {}
-    },
-    "SouthAmerica": {
-      "id": "SouthAmerica",
-      "name": "SouthAmerica",
-      "countries": {}
-    }
-  },
-  "continents": [
-    {
-      "id": "AustraliaAndOceania",
-      "name": "Australia And Oceania",
-      "countries": [
+    "sidenav": [
         {
-          "id": "Australia",
-          "name": "Australia"
+            "name": "Главная",
+            "link": ""
         },
         {
-          "id": "Fiji",
-          "name": "Fiji"
-        }
-      ]
-    },
-    {
-      "id": "Africa",
-      "name": "Africa",
-      "countries": [
+            "name": "Collection",
+            "link": "collection"
+        },
         {
-          "id": "Ghana",
-          "name": "Ghana"
-        }
-      ]
-    },
-    {
-      "id": "Asia",
-      "name": "Asia"
-    },
-    {
-      "id": "Europe",
-      "name": "Europe",
-      "countries": [
+            "name": "Analytics",
+            "link": "analytics"
+        },
         {
-          "id": "Russia",
-          "name": "Russia"
+            "name": "Administration",
+            "link": "administration"
         }
-      ]
+    ],
+    "coinDialog": {
+        "titleAdd": "Add new coin",
+        "titleEdit": "Edit coin",
+        "country": "Country",
+        "type": "Coin or banknote",
+        "denomination": "Denomination",
+        "currency": "Currency",
+        "year": "Year",
+        "material": "Material",
+        "comment": "Comment",
+        "addPhoto": "Add photo",
+        "buttons": {
+            "cancel": "Cancel",
+            "add": "Add",
+            "save": "Save"
+        }
     },
-    {
-      "id": "NorthAmerica",
-      "name": "North America"
+    "coinDeleteDialog": {
+        "title": "Are you sure you want to delete the coin?",
+        "buttons": {
+            "cancel": "Cancel",
+            "delete": "Delete"
+        }
     },
-    {
-      "id": "SouthAmerica",
-      "name": "South America"
-    }
-  ],
-  "types": ["Coin", "Banknote"]
+    "collection": {
+        "country": "Country",
+        "denomination": "Denomination",
+        "currency": "Currency",
+        "year": "Year",
+        "material": "Material",
+        "type": "Coin or banknote",
+        "comment": "Comment",
+        "photo": "Photo",
+        "edit": "Edit",
+        "delete": "Delete"
+    },
+    "countries": {
+        "AustraliaAndOceania": {
+            "id": "AustraliaAndOceania",
+            "name": "Australia and Oceania",
+            "countries": {
+                "Australia": {
+                    "id": "Australia",
+                    "name": "Australia"
+                },
+                "Fiji": {
+                    "id": "Fiji",
+                    "name": "Fiji"
+                }
+            }
+        },
+        "Africa": {
+            "id": "Africa",
+            "name": "Africa",
+            "countries": {
+                "Ghana": {
+                    "id": "Ghana",
+                    "name": "Ghana"
+                }
+            }
+        },
+        "Asia": {
+            "id": "Asia",
+            "name": "Asia",
+            "countries": {}
+        },
+        "Europe": {
+            "id": "Europe",
+            "name": "Europe",
+            "countries": {
+                "Russia": {
+                    "id": "Russia",
+                    "name": "Russia"
+                }
+            }
+        },
+        "NorthAmerica": {
+            "id": "NorthAmerica",
+            "name": "NorthAmerica",
+            "countries": {}
+        },
+        "SouthAmerica": {
+            "id": "SouthAmerica",
+            "name": "SouthAmerica",
+            "countries": {}
+        }
+    },
+    "continents": [
+        {
+            "id": "AustraliaAndOceania",
+            "name": "Australia And Oceania",
+            "countries": [
+                {
+                    "id": "Australia",
+                    "name": "Australia"
+                },
+                {
+                    "id": "Fiji",
+                    "name": "Fiji"
+                }
+            ]
+        },
+        {
+            "id": "Africa",
+            "name": "Africa",
+            "countries": [
+                {
+                    "id": "Ghana",
+                    "name": "Ghana"
+                }
+            ]
+        },
+        {
+            "id": "Asia",
+            "name": "Asia"
+        },
+        {
+            "id": "Europe",
+            "name": "Europe",
+            "countries": [
+                {
+                    "id": "Russia",
+                    "name": "Russia"
+                }
+            ]
+        },
+        {
+            "id": "NorthAmerica",
+            "name": "North America"
+        },
+        {
+            "id": "SouthAmerica",
+            "name": "South America"
+        }
+    ],
+    "types": ["Coin", "Banknote"]
 }

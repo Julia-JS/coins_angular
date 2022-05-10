@@ -1,66 +1,66 @@
 .coin-dialog {
-  &__title {
-    padding: 1rem 0;
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  &__section {
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &--image {
-      height: 6rem;
+    &__title {
+        padding: 1rem 0;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
     }
 
-    &:nth-child(7) {
-      * {
-        width: 100%;
-      }
+    &__section {
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--image {
+            height: 6rem;
+        }
+
+        &:nth-child(7) {
+            * {
+                width: 100%;
+            }
+        }
+
+        &:last-child {
+            justify-content: flex-end;
+        }
     }
 
-    &:last-child {
-      justify-content: flex-end;
-    }
-  }
-
-  &__input {
-    &--file {
-      display: none;
-    }
-  }
-
-  &__img {
-    position: relative;
-    height: 6rem;
-
-    mat-icon {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      width: 1rem;
-      height: 1rem;
-      font-size: 1rem;
-      font-weight: 700;
-      border: 2px black solid;
-      border-radius: 50%;
-      background: white;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.125);
-      }
+    &__input {
+        &--file {
+            display: none;
+        }
     }
 
-    img {
-      height: 100%;
+    &__img {
+        position: relative;
+        height: 6rem;
 
-      + img {
-        margin-left: 1rem;
-      }
+        mat-icon {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 1rem;
+            height: 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border: 2px black solid;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.125);
+            }
+        }
+
+        img {
+            height: 100%;
+
+            + img {
+                margin-left: 1rem;
+            }
+        }
     }
-  }
 }

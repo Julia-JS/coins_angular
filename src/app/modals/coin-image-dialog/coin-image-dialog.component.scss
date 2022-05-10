@@ -1,14 +1,14 @@
 .coin-image-dialog {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 
-  &__img {
-    + .coin-image-dialog__img {
-      margin-left: 2rem;
-    }
+    &__img {
+        + .coin-image-dialog__img {
+            margin-left: 2rem;
+        }
 
-    img {
-      width: 100%;
+        img {
+            width: 100%;
+        }
     }
-  }
 }

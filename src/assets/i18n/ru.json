@@ -1,166 +1,166 @@
 {
-  "header": {
-    "title": "Монеты",
-    "languages": {
-      "choose": "Выберите язык",
-      "russian": "Русский",
-      "english": "English",
-      "spanish": "Español",
-      "german": "Deutsch"
-    }
-  },
-  "sidenav": [
-    {
-      "name": "Главная",
-      "link": ""
-    },
-    {
-      "name": "Коллекция",
-      "link": "collection"
-    },
-    {
-      "name": "Аналитика",
-      "link": "analytics"
-    },
-    {
-      "name": "Управление",
-      "link": "administration"
-    }
-  ],
-  "coinDialog": {
-    "titleAdd": "Добавить новую монету",
-    "titleEdit": "Редактировать монету",
-    "country": "Страна",
-    "type": "Монета или банкнота",
-    "denomination": "Номинал",
-    "currency": "Валюта",
-    "year": "Год выпуска",
-    "material": "Материал",
-    "comment": "Комментарий",
-    "addPhoto": "Добавить фото",
-    "buttons": {
-      "cancel": "Отмена",
-      "save": "Сохранить",
-      "add": "Добавить"
-    }
-  },
-  "coinDeleteDialog": {
-    "title": "Вы действительно хотите удалить монету?",
-    "buttons": {
-      "cancel": "Отмена",
-      "delete": "Удалить"
-    }
-  },
-  "collection": {
-    "country": "Страна",
-    "denomination": "Номинал",
-    "currency": "Валюта",
-    "year": "Год выпуска",
-    "material": "Материал",
-    "type": "Монета или банкнота",
-    "comment": "Комментарий",
-    "photo": "Фото",
-    "edit": "Редактировать",
-    "delete": "Удалить"
-  },
-  "countries": {
-    "AustraliaAndOceania": {
-      "id": "AustraliaAndOceania",
-      "name": "Австралия и Океания",
-      "countries": {
-        "Australia": {
-          "id": "Australia",
-          "name": "Австралия"
-        },
-        "Fiji": {
-          "id": "Fiji",
-          "name": "Фиджи"
+    "header": {
+        "title": "Монеты",
+        "languages": {
+            "choose": "Выберите язык",
+            "russian": "Русский",
+            "english": "English",
+            "spanish": "Español",
+            "german": "Deutsch"
         }
-      }
     },
-    "Africa": {
-      "id": "Africa",
-      "name": "Африка",
-      "countries": {
-        "Ghana": {
-          "id": "Ghana",
-          "name": "Гана"
-        }
-      }
-    },
-    "Asia": {
-      "id": "Asia",
-      "name": "Азия",
-      "countries": {}
-    },
-    "Europe": {
-      "id": "Europe",
-      "name": "Европа",
-      "countries": {
-        "Russia": {
-          "id": "Russia",
-          "name": "Россия"
-        }
-      }
-    },
-    "NorthAmerica": {
-      "id": "NorthAmerica",
-      "name": "Северная Америка",
-      "countries": {}
-    },
-    "SouthAmerica": {
-      "id": "SouthAmerica",
-      "name": "Южная Америка",
-      "countries": {}
-    }
-  },
-  "continents": [
-    {
-      "id": "AustraliaAndOceania",
-      "name": "Австралия и Океания",
-      "countries": [
+    "sidenav": [
         {
-          "id": "Australia",
-          "name": "Австралия"
+            "name": "Главная",
+            "link": ""
         },
         {
-          "id": "Fiji",
-          "name": "Фиджи"
-        }
-      ]
-    },
-    {
-      "id": "Africa",
-      "name": "Африка",
-      "countries": [
+            "name": "Коллекция",
+            "link": "collection"
+        },
         {
-          "id": "Ghana",
-          "name": "Гана"
-        }
-      ]
-    },
-    {
-      "id": "Asia",
-      "name": "Азия"
-    },
-    {
-      "id": "Europe",
-      "name": "Европа",
-      "countries": [
+            "name": "Аналитика",
+            "link": "analytics"
+        },
         {
-          "id": "Russia",
-          "name": "Россия"
+            "name": "Управление",
+            "link": "administration"
         }
-      ]
+    ],
+    "coinDialog": {
+        "titleAdd": "Добавить новую монету",
+        "titleEdit": "Редактировать монету",
+        "country": "Страна",
+        "type": "Монета или банкнота",
+        "denomination": "Номинал",
+        "currency": "Валюта",
+        "year": "Год выпуска",
+        "material": "Материал",
+        "comment": "Комментарий",
+        "addPhoto": "Добавить фото",
+        "buttons": {
+            "cancel": "Отмена",
+            "save": "Сохранить",
+            "add": "Добавить"
+        }
     },
-    {
-      "id": "NorthAmerica",
-      "name": "Северная Америка"
+    "coinDeleteDialog": {
+        "title": "Вы действительно хотите удалить монету?",
+        "buttons": {
+            "cancel": "Отмена",
+            "delete": "Удалить"
+        }
     },
-    {
-      "id": "SouthAmerica",
-      "name": "Южная Америка"
-    }
-  ],
-  "types": ["Монета", "Банкнота"]
+    "collection": {
+        "country": "Страна",
+        "denomination": "Номинал",
+        "currency": "Валюта",
+        "year": "Год выпуска",
+        "material": "Материал",
+        "type": "Монета или банкнота",
+        "comment": "Комментарий",
+        "photo": "Фото",
+        "edit": "Редактировать",
+        "delete": "Удалить"
+    },
+    "countries": {
+        "AustraliaAndOceania": {
+            "id": "AustraliaAndOceania",
+            "name": "Австралия и Океания",
+            "countries": {
+                "Australia": {
+                    "id": "Australia",
+                    "name": "Австралия"
+                },
+                "Fiji": {
+                    "id": "Fiji",
+                    "name": "Фиджи"
+                }
+            }
+        },
+        "Africa": {
+            "id": "Africa",
+            "name": "Африка",
+            "countries": {
+                "Ghana": {
+                    "id": "Ghana",
+                    "name": "Гана"
+                }
+            }
+        },
+        "Asia": {
+            "id": "Asia",
+            "name": "Азия",
+            "countries": {}
+        },
+        "Europe": {
+            "id": "Europe",
+            "name": "Европа",
+            "countries": {
+                "Russia": {
+                    "id": "Russia",
+                    "name": "Россия"
+                }
+            }
+        },
+        "NorthAmerica": {
+            "id": "NorthAmerica",
+            "name": "Северная Америка",
+            "countries": {}
+        },
+        "SouthAmerica": {
+            "id": "SouthAmerica",
+            "name": "Южная Америка",
+            "countries": {}
+        }
+    },
+    "continents": [
+        {
+            "id": "AustraliaAndOceania",
+            "name": "Австралия и Океания",
+            "countries": [
+                {
+                    "id": "Australia",
+                    "name": "Австралия"
+                },
+                {
+                    "id": "Fiji",
+                    "name": "Фиджи"
+                }
+            ]
+        },
+        {
+            "id": "Africa",
+            "name": "Африка",
+            "countries": [
+                {
+                    "id": "Ghana",
+                    "name": "Гана"
+                }
+            ]
+        },
+        {
+            "id": "Asia",
+            "name": "Азия"
+        },
+        {
+            "id": "Europe",
+            "name": "Европа",
+            "countries": [
+                {
+                    "id": "Russia",
+                    "name": "Россия"
+                }
+            ]
+        },
+        {
+            "id": "NorthAmerica",
+            "name": "Северная Америка"
+        },
+        {
+            "id": "SouthAmerica",
+            "name": "Южная Америка"
+        }
+    ],
+    "types": ["Монета", "Банкнота"]
 }

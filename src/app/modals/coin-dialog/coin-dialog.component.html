@@ -1,71 +1,105 @@
-<ng-container *transloco="let t;">
-  <div class="coin-dialog__title">{{ isNewCoin ? t('coinDialog.titleAdd') : t('coinDialog.titleEdit') }}</div>
-  <mat-divider></mat-divider>
-  <form [formGroup]="coinForm">
-    <section class="coin-dialog__section">
-      <mat-form-field appearance="fill">
-        <mat-label>{{ t('coinDialog.country') }}</mat-label>
-        <mat-select formControlName="country">
-          <mat-optgroup *ngFor="let continent of t('continents'); index as i" [label]="continent.name">
-            <mat-option *ngFor="let country of continent.countries" [value]="[continent.id, country.id]">
-              {{ country.name }}
-            </mat-option>
-          </mat-optgroup>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>{{ t('coinDialog.type') }}</mat-label>
-        <mat-select formControlName="type">
-          <mat-option *ngFor="let type of t('types')" [value]="type">
-            {{ type }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </section>
+<ng-container *transloco="let t">
+    <div class="coin-dialog__title">
+        {{ isNewCoin ? t('coinDialog.titleAdd') : t('coinDialog.titleEdit') }}
+    </div>
     <mat-divider></mat-divider>
-    <section class="coin-dialog__section">
-      <mat-form-field appearance="fill">
-        <mat-label>{{ t('coinDialog.denomination') }}</mat-label>
-        <input matInput formControlName="denomination">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>{{ t('coinDialog.currency') }}</mat-label>
-        <input matInput formControlName="currency">
-      </mat-form-field>
-    </section>
-    <mat-divider></mat-divider>
-    <section class="coin-dialog__section">
-      <mat-form-field appearance="fill">
-        <mat-label>{{ t('coinDialog.year') }}</mat-label>
-        <input matInput formControlName="year">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>{{ t('coinDialog.material') }}</mat-label>
-        <input matInput formControlName="material">
-      </mat-form-field>
-    </section>
-    <mat-divider></mat-divider>
-    <section class="coin-dialog__section">
-      <mat-form-field appearance="fill">
-        <mat-label>{{ t('coinDialog.comment') }}</mat-label>
-        <textarea matInput formControlName="comment"></textarea>
-      </mat-form-field>
-    </section>
-    <mat-divider></mat-divider>
-    <section class="coin-dialog__section coin-dialog__section--image">
-      <input #inputFile type="file" class="coin-dialog__input--file" (change)="onFileUpload($event)"
-             formControlName="image">
-      <button mat-raised-button color="primary" (click)="triggerInputFileClick()"
-              [disabled]="imagesArray.length >= 2">{{ t('coinDialog.addPhoto') }}</button>
-      <div *ngFor="let image of imagesArray; index as index" class="coin-dialog__img">
-        <img [src]="image" alt="coin">
-        <mat-icon class="mat-icon-rtl-mirror" (click)="deleteImage(index)">close</mat-icon>
-      </div>
-    </section>
-    <mat-divider></mat-divider>
-    <section mat-dialog-actions class="coin-dialog__section">
-      <button mat-button (click)="closeDialog()">{{ t('coinDialog.buttons.cancel') }}</button>
-      <button mat-button cdkFocusInitial (click)="submitCoin()">{{ isNewCoin ? t('coinDialog.buttons.add') : t('coinDialog.buttons.save') }}</button>
-    </section>
-  </form>
+    <form [formGroup]="coinForm">
+        <section class="coin-dialog__section">
+            <mat-form-field appearance="fill">
+                <mat-label>{{ t('coinDialog.country') }}</mat-label>
+                <mat-select formControlName="country">
+                    <mat-optgroup
+                        *ngFor="let continent of t('continents'); index as i"
+                        [label]="continent.name"
+                    >
+                        <mat-option
+                            *ngFor="let country of continent.countries"
+                            [value]="[continent.id, country.id]"
+                        >
+                            {{ country.name }}
+                        </mat-option>
+                    </mat-optgroup>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>{{ t('coinDialog.type') }}</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option *ngFor="let type of t('types')" [value]="type">
+                        {{ type }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </section>
+        <mat-divider></mat-divider>
+        <section class="coin-dialog__section">
+            <mat-form-field appearance="fill">
+                <mat-label>{{ t('coinDialog.denomination') }}</mat-label>
+                <input matInput formControlName="denomination" />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>{{ t('coinDialog.currency') }}</mat-label>
+                <input matInput formControlName="currency" />
+            </mat-form-field>
+        </section>
+        <mat-divider></mat-divider>
+        <section class="coin-dialog__section">
+            <mat-form-field appearance="fill">
+                <mat-label>{{ t('coinDialog.year') }}</mat-label>
+                <input matInput formControlName="year" />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>{{ t('coinDialog.material') }}</mat-label>
+                <input matInput formControlName="material" />
+            </mat-form-field>
+        </section>
+        <mat-divider></mat-divider>
+        <section class="coin-dialog__section">
+            <mat-form-field appearance="fill">
+                <mat-label>{{ t('coinDialog.comment') }}</mat-label>
+                <textarea matInput formControlName="comment"></textarea>
+            </mat-form-field>
+        </section>
+        <mat-divider></mat-divider>
+        <section class="coin-dialog__section coin-dialog__section--image">
+            <input
+                #inputFile
+                type="file"
+                class="coin-dialog__input--file"
+                (change)="onFileUpload($event)"
+                formControlName="image"
+            />
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="triggerInputFileClick()"
+                [disabled]="imagesArray.length >= 2"
+            >
+                {{ t('coinDialog.addPhoto') }}
+            </button>
+            <div
+                *ngFor="let image of imagesArray; index as index"
+                class="coin-dialog__img"
+            >
+                <img [src]="image" alt="coin" />
+                <mat-icon
+                    class="mat-icon-rtl-mirror"
+                    (click)="deleteImage(index)"
+                    >close</mat-icon
+                >
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+        <section mat-dialog-actions class="coin-dialog__section">
+            <button mat-button (click)="closeDialog()">
+                {{ t('coinDialog.buttons.cancel') }}
+            </button>
+            <button mat-button cdkFocusInitial (click)="submitCoin()">
+                {{
+                    isNewCoin
+                        ? t('coinDialog.buttons.add')
+                        : t('coinDialog.buttons.save')
+                }}
+            </button>
+        </section>
+    </form>
 </ng-container>

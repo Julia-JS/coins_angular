@@ -1,20 +1,21 @@
 .collection {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem;
 
-  &--opened {
-    padding: 7rem 2rem 2rem;
-  }
-
-  &__item {
-    margin: 0 0 2rem;
-
-    &--active {
-      display: block;
-      box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 6px 6px 12px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
-      text-decoration: underline;
+    &--opened {
+        padding: 7rem 2rem 2rem;
     }
-  }
+
+    &__item {
+        margin: 0 0 2rem;
+
+        &--active {
+            display: block;
+            box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+                6px 6px 12px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+            text-decoration: underline;
+        }
+    }
 }

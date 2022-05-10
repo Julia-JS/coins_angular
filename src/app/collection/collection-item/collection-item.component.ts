@@ -1,10 +1,10 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-collection-item',
-  templateUrl: './collection-item.component.html',
-  styleUrls: ['./collection-item.component.scss']
+    selector: 'app-collection-item',
+    templateUrl: './collection-item.component.html',
+    styleUrls: ['./collection-item.component.scss'],
 })
 export class CollectionItemComponent {
-  @Input() continentName: string = '';
+    @Input() continentName: string = '';
 }

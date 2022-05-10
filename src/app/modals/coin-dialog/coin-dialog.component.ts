@@ -1,101 +1,96 @@
-import {Component, ElementRef, Inject, ViewChild} from '@angular/core';
-import {MatDialogRef} from '@angular/material/dialog';
-import {CoinsService} from '../../services/coins.service';
-import {FormControl, FormGroup} from '@angular/forms';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {HttpClient} from '@angular/common/http';
-import {ICoin, ICoinResponse} from '../../interfaces/coin.interface';
+import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { CoinsHttpService } from '../../services/http/coins-http.service';
+import { FormControl, FormGroup } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
+import { CoinsService } from '../../services/coins/coins.service';
 
 @Component({
-  selector: 'app-coin-dialog',
-  templateUrl: './coin-dialog.component.html',
-  styleUrls: ['./coin-dialog.component.scss']
+    selector: 'app-coin-dialog',
+    templateUrl: './coin-dialog.component.html',
+    styleUrls: ['./coin-dialog.component.scss'],
 })
 export class CoinDialogComponent {
-  constructor(
-    public dialogRef: MatDialogRef<CoinDialogComponent>,
-    private http: HttpClient,
-    private coinsService: CoinsService,
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) {
-  }
+    public coinForm: FormGroup = new FormGroup({
+        country: new FormControl(this.data?.dataKey?.country || ''),
+        denomination: new FormControl(this.data?.dataKey?.denomination || ''),
+        currency: new FormControl(this.data?.dataKey?.currency || ''),
+        year: new FormControl(this.data?.dataKey?.year || ''),
+        material: new FormControl(this.data?.dataKey?.material || ''),
+        type: new FormControl(this.data?.dataKey?.type || ''),
+        comment: new FormControl(this.data?.dataKey?.comment || ''),
+        image: new FormControl(''),
+    });
 
-  @ViewChild('inputFile') inputFileRef: ElementRef;
-  private image: File;
-  private imagePreview: string | ArrayBuffer | null = '';
-  public imagesArray: Array<string | ArrayBuffer> = this.data?.dataKey?.image ? this.data?.dataKey?.image.slice() : [];
-  public isNewCoin = !this.data;
-  public countries;
+    public imagesArray: Array<string | ArrayBuffer> = this.data?.dataKey?.image
+        ? this.data?.dataKey?.image.slice()
+        : [];
+    public isNewCoin: boolean = !this.data;
+    @ViewChild('inputFile') inputFileRef: ElementRef;
+    private imagePreview: string | ArrayBuffer | null = '';
+    private image: File;
 
+    constructor(
+        public dialogRef: MatDialogRef<CoinDialogComponent>,
+        private http: HttpClient,
+        private coinsService: CoinsService,
+        @Inject(MAT_DIALOG_DATA) public data: any
+    ) {}
 
-  coinForm: FormGroup = new FormGroup({
-    country: new FormControl(this.data?.dataKey?.country || ''),
-    denomination: new FormControl(this.data?.dataKey?.denomination || ''),
-    currency: new FormControl(this.data?.dataKey?.currency || ''),
-    year: new FormControl(this.data?.dataKey?.year || ''),
-    material: new FormControl(this.data?.dataKey?.material || ''),
-    type: new FormControl(this.data?.dataKey?.type || ''),
-    comment: new FormControl(this.data?.dataKey?.comment || ''),
-    image: new FormControl(''),
-  });
-
-  private triggerInputFileClick(): void {
-    this.inputFileRef.nativeElement.click();
-  }
-
-  private onFileUpload(event: Event): void {
-    const file = (event.target as HTMLInputElement).files?.[0];
-    if (file) {
-      this.image = file;
-    }
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.imagePreview = reader.result;
-      if (this.imagePreview) {
-        this.imagesArray.push(this.imagePreview);
-      }
-    };
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-  }
-
-  private closeDialog(): void {
-    this.dialogRef.close();
-  }
-
-  private submitCoin(): void {
-    const coin = {
-      ...this.coinForm.value,
-      id: this.data?.dataKey.id,
-      continent: this.coinForm.value.country[0],
-      country: this.coinForm.value.country[1],
-      image: this.imagesArray,
-    };
-
-    if (this.isNewCoin) {
-      this.createCoin(coin);
-    } else {
-      this.updateCoin(this.data.dataKey.id, coin);
+    private triggerInputFileClick(): void {
+        this.inputFileRef.nativeElement.click();
     }
 
-    this.dialogRef.close();
-  }
+    private onFileUpload(event: Event): void {
+        const file = (event.target as HTMLInputElement).files?.[0];
+        if (file) {
+            this.image = file;
+        }
+        const reader = new FileReader();
+        reader.onload = () => {
+            this.imagePreview = reader.result;
+            if (this.imagePreview) {
+                this.imagesArray.push(this.imagePreview);
+            }
+        };
 
-  private createCoin(coin: ICoin): void {
-    this.coinsService.create(coin).subscribe(() => {
-      this.coinsService.rerender();
-    }, err => console.log(err));
-  }
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
 
-  private updateCoin(id: number, coin: ICoinResponse): void {
-    this.coinsService.update(id, coin).subscribe(() => {
-      this.coinsService.rerender();
-    }, err => console.log(err));
-  }
+    private closeDialog(): void {
+        this.dialogRef.close();
+    }
 
-  private deleteImage(i: number): void {
-    this.imagesArray.splice(i, 1);
-  }
+    private submitCoin(): void {
+        const coin = {
+            ...this.coinForm.value,
+            id: this.data?.dataKey.id,
+            continent: this.coinForm.value.country[0],
+            country: this.coinForm.value.country[1],
+            image: this.imagesArray,
+        };
+
+        if (this.isNewCoin) {
+            this.createCoin(coin);
+        } else {
+            this.updateCoin(this.data.dataKey.id, coin);
+        }
+
+        this.dialogRef.close();
+    }
+
+    private createCoin(coin): void {
+        this.coinsService.createCoin(coin);
+    }
+
+    private updateCoin(id, coin): void {
+        this.coinsService.updateCoin(id, coin);
+    }
+
+    private deleteImage(i: number): void {
+        this.imagesArray.splice(i, 1);
+    }
 }
