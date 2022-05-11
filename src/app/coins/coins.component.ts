@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { CoinDialogComponent } from '../modals/coin-dialog/coin-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CoinImageDialogComponent } from '../modals/coin-image-dialog/coin-image-dialog.component';
 import { TranslocoService } from '@ngneat/transloco';
 import { ICoinResponse } from '../interfaces/coin.interface';
 import { CoinDeleteDialogComponent } from '../modals/coin-delete-dialog/coin-delete-dialog.component';
-import { takeUntil } from 'rxjs/operators';
+import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { CoinsService } from '../services/coins/coins.service';
 
@@ -31,44 +31,30 @@ export class CoinsComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit(): void {
-        // console.log(this.translocoService.selectTranslateObject('countries'));
-        this.coinsService.coins$
-            .pipe(takeUntil(this.ngUnsubscribe))
-            .subscribe((res: ICoinResponse[]) => {
-                this.coins = res
-                    .filter((coin) => coin.continent === this.currentContinent)
-                    .sort((a: ICoinResponse, b: ICoinResponse) =>
-                        a.country > b.country ? 1 : -1
-                    );
-            });
-
         this.getAllCoins();
 
-        this.router.events.subscribe((event) => {
-            if (event instanceof NavigationEnd) {
-                this.getActiveContinent();
-                this.coinsService.coins$
-                    .pipe(takeUntil(this.ngUnsubscribe))
-                    .subscribe((res: ICoinResponse[]) => {
-                        this.coins = res
-                            .filter(
-                                (coin) =>
-                                    coin.continent === this.currentContinent
-                            )
-                            .sort((a: ICoinResponse, b: ICoinResponse) =>
-                                a.country > b.country ? 1 : -1
-                            );
-                    });
-            }
-        });
+        this.activatedRoute.url
+            .pipe(
+                takeUntil(this.ngUnsubscribe),
+                tap((x: UrlSegment[]) => (this.currentContinent = x[0].path)),
+                switchMap(() => this.coinsService.coins$),
+                map((coins: ICoinResponse[]) =>
+                    coins.filter(
+                        (coin: ICoinResponse) =>
+                            coin.continent === this.currentContinent
+                    )
+                ),
+                map((coins: ICoinResponse[]) =>
+                    coins.sort((a: ICoinResponse, b: ICoinResponse) =>
+                        a.country > b.country ? 1 : -1
+                    )
+                )
+            )
+            .subscribe((coins) => (this.coins = coins));
     }
 
     private getAllCoins(): void {
         this.coinsService.getAllCoins();
-    }
-
-    private getActiveContinent(): void {
-        this.currentContinent = this.activatedRoute.snapshot.paramMap.get('id');
     }
 
     private openDialog(coin: ICoinResponse): void {

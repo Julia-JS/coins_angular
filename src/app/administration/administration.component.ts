@@ -7,8 +7,8 @@ import { FormControl, FormGroup } from '@angular/forms';
     styleUrls: ['./administration.component.scss'],
 })
 export class AdministrationComponent {
-  // public countryResponse = [];
-  countryForm: FormGroup = new FormGroup({
+    // public countryResponse = [];
+    countryForm: FormGroup = new FormGroup({
         continent: new FormControl(''),
         ru: new FormControl(''),
         en: new FormControl(''),

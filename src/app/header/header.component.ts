@@ -20,8 +20,8 @@ import { takeUntil } from 'rxjs/operators';
     styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, AfterContentChecked, OnDestroy {
-  public isOpened: boolean;
-  private ngUnsubscribe: Subject<void> = new Subject<void>();
+    public isOpened: boolean;
+    private ngUnsubscribe: Subject<void> = new Subject<void>();
 
     constructor(
         private service: TranslocoService,
